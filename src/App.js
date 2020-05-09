@@ -8,6 +8,7 @@ class App extends Component {
       this.state = {
         currentQuiz: null
       }
+  }  
 
     render() {
       return(
@@ -18,7 +19,5 @@ class App extends Component {
     }
 
   }
-
-}
 
 export default App;
