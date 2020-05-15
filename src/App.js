@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import dropDown from './components/drop_down/dropDown';
+import DropDown from './components/drop_down/DropDown';
 
 class App extends Component {
 
@@ -8,6 +8,7 @@ class App extends Component {
     super(props);
       this.state = {
         categories: null,
+        loading: true,
         test: [
                 {name: "Geography"},
                 {name: "General Knowledge"}
@@ -21,11 +22,11 @@ class App extends Component {
   };
 
   // add a condition that checks of data is already there. Don't fetch if so.
-  // change to an arrow
+
   getCategories() {
     fetch('https://opentdb.com/api_category.php')
       .then(response => response.json())
-      .then(data => this.setState({categories: data}))
+      .then(data => this.setState({categories: data.trivia_categories, loading: false}))
       .catch(error => console.log(error.message));
   };
 
@@ -37,8 +38,10 @@ class App extends Component {
       <div className="App">
         <p>Quiz!</p>
 
-  {/* use a ternery statement in populating dropDown. fetch can change state, pre = default data, post = fetched daata */}
-
+    {this.state.loading ? 
+      <DropDown categories={this.state.test} selectName={"categorySelect"} /> : 
+      <DropDown categories={this.state.categories} selectName={"categorySelect"} />
+    }
       </div>
     )
   }
