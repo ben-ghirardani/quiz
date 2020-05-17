@@ -10,8 +10,8 @@ class App extends Component {
         categories: null,
         loading: true,
         test: [
-                {name: "Geography"},
-                {name: "General Knowledge"}
+                {id: 1, name: "Geography"},
+                {id: 2, name: "General Knowledge"}
               ]
       }
       this.getCategories = this.getCategories.bind(this);
