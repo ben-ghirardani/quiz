@@ -8,10 +8,10 @@ class App extends Component {
     super(props);
       this.state = {
         categories: null,
+        chosenCategories: [],
         loading: true,
         test: [
-                {id: 1, name: "Geography"},
-                {id: 2, name: "General Knowledge"}
+                {id: 123456789, name: "loading"}
               ]
       }
       this.getCategories = this.getCategories.bind(this);
@@ -38,9 +38,10 @@ class App extends Component {
       <div className="App">
         <p>Quiz!</p>
 
+    {/* improve this */}
     {this.state.loading ? 
-      <DropDown categories={this.state.test} selectName={"categorySelect"} /> : 
-      <DropDown categories={this.state.categories} selectName={"categorySelect"} />
+      <DropDown label="Choose category" categories={this.state.test} selectName={"categorySelect"} /> : 
+      <DropDown label="Choose category" categories={this.state.categories} selectName={"categorySelect"} />
     }
       </div>
     )
