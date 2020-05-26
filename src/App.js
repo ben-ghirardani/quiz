@@ -31,7 +31,10 @@ class App extends Component {
       .catch(error => console.log(error.message));
   };
 
-  // get the category from the category name
+
+  // getCategoryID is not working coreectly
+
+  // get the category ID from the category name
   getCategoryID(categoryName) {
     let categories = this.state.categories;
     let categoryID;
@@ -41,15 +44,21 @@ class App extends Component {
       } else {
         return
       }
-    return categoryID;
     });
+    return categoryID;
   }
 
   // use ID to get number of questions
   async getNumberOfQuestions(id) {
-    let response = await fetch("https://opentdb.com/api_count.php?category=19");
-    let data = response.json();
-    this.setState({testNumbers: data})
+    // let response = await fetch("https://opentdb.com/api_count.php?category=19");
+    let apiString = "https://opentdb.com/api_count.php?category="
+    // let appendedID = id.toString();
+    console.log(id);
+    console.log(typeof id);
+    // let response = await fetch("https://opentdb.com/api_count.php?category=");
+    // let data = await response.json();
+    // change to append to categories? Or split out?
+    // this.setState({testNumbers: data})
   }
 
     // endpoint for number of questions per category

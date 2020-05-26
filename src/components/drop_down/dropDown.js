@@ -25,7 +25,6 @@ export default class DropDown extends Component {
       <form onSubmit={this.handleSubmit}>
         <label> {this.props.label}
         <select name={this.props.selectName} value={this.state.value} onChange={this.handleChange} >
-          {/* make the first option in the drop-down be "default" */}
           <option value="Choose category...">
             Choose category...
           </option>
