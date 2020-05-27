@@ -5,7 +5,7 @@ export default class DropDown extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { value: "Choose category..." };
+    this.state = { value: "" };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -16,8 +16,13 @@ export default class DropDown extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    let categoryID = this.props.getCategoryID(this.state.value);
-    this.props.getNumberOfQuestions(categoryID);
+
+    if(this.state.value === "") {
+      return
+    } else {
+      let categoryID = this.props.getCategoryID(this.state.value);
+      this.props.getNumberOfQuestions(categoryID);
+    }
   };
 
   render() {
@@ -25,7 +30,8 @@ export default class DropDown extends Component {
       <form onSubmit={this.handleSubmit}>
         <label> {this.props.label}
         <select name={this.props.selectName} value={this.state.value} onChange={this.handleChange} >
-          <option value="Choose category...">
+          {/* <option value="Choose category..."> */}
+          <option value="" hidden>
             Choose category...
           </option>
           {
