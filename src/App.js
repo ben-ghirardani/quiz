@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import DropDown from './components/drop_down/DropDown';
+import Button from './components/button/Button';
 
 class App extends Component {
 
@@ -78,6 +79,74 @@ class App extends Component {
         selectName={"categorySelect"} 
         getCategoryID={this.getCategoryID} 
         getNumberOfQuestions={this.getNumberOfQuestions}
+      />
+    }
+
+    {/* CSS should mean I don't need this */}
+    <br></br>
+    <br></br>
+
+    {"Choose difficulty"}
+    {
+      <Button
+        name={"Easy"}
+        value={"Easy"}
+        onClick={() => console.log("Easy button clicked!")}
+        buttonText={"Easy"}
+      />
+    }
+    {
+      <Button
+        name={"Medium"}
+        value={"Medium"}
+        onClick={() => console.log("Medium button clicked!")}
+        buttonText={"Medium"}
+      />
+    }
+    {
+      <Button
+        name={"Hard"}
+        value={"Hard"}
+        onClick={() => console.log("Hard button clicked!")}
+        buttonText={"Hard"}
+      />
+    }
+    {
+      <Button
+        name={"Random"}
+        value={"Random"}
+        onClick={() => console.log("Random button clicked!")}
+        buttonText={"Random"}
+      />
+    }
+
+    {/* CSS should mean I don't need this */}
+    <br></br>
+    <br></br>
+
+    {"Choose length"}
+    {
+      <Button
+        name={"Short"}
+        value={"Short"}
+        onClick={() => console.log("Short button clicked!")}
+        buttonText={"Short"}
+      />
+    }
+    {
+      <Button
+        name={"Medium"}
+        value={"Medium"}
+        onClick={() => console.log("Medium button clicked!")}
+        buttonText={"Medium"}
+      />
+    }
+    {
+      <Button
+        name={"Long"}
+        value={"Long"}
+        onClick={() => console.log("Long button clicked!")}
+        buttonText={"Long"}
       />
     }
       </div>
