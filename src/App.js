@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import DropDown from './components/drop_down/DropDown';
+
 import Button from './components/button/Button';
+
+import Category from './components/category/Category';
+import Difficulty from './components/difficulty/Difficulty';
+import Length from './components/length/Length';
+import Quiz from './components/quiz/Quiz';
+import Loading from './components/loading/Loading';
 
 class App extends Component {
 
@@ -11,9 +17,10 @@ class App extends Component {
         categories: null,
         // is this being used?
         chosenCategories: [],
-        loading: true,
+        display: "Loading",
         numQuestions: null,
         difficulty: null,
+        length: null,
         default: [
                 {id: 123456789, name: "loading"}
               ]
@@ -23,6 +30,11 @@ class App extends Component {
       this.getNumberOfQuestions = this.getNumberOfQuestions.bind(this);
       this.disableLengthButton = this.disableLengthButton.bind(this);
       this.disableDifficultyButton = this.disableDifficultyButton.bind(this);
+      this.setDifficulty = this.setDifficulty.bind(this);
+      this.changeDisplay = this.changeDisplay.bind(this);
+      this.setDifficultyAndDisplay = this.setDifficultyAndDisplay.bind(this);
+      this.setLength = this.setLength.bind(this);
+      this.setLengthAndDisplay = this.setLengthAndDisplay.bind(this);
   }
 
   componentDidMount() {
@@ -32,7 +44,7 @@ class App extends Component {
   getCategories() {
     fetch('https://opentdb.com/api_category.php')
       .then(response => response.json())
-      .then(data => this.setState({categories: data.trivia_categories, loading: false}))
+      .then(data => this.setState({categories: data.trivia_categories, display: "Category"}))
       .catch(error => console.log(error.message));
   };
 
@@ -62,31 +74,44 @@ class App extends Component {
 // when randomizing the array of answers to each question use the following Fisher-Yates (aka Knuth) Shuffle -
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 
+  // function to combine setDifficulty and changeDisplay for difficulty buttons
+  setDifficultyAndDisplay(difficulty, display) {
+    this.setDifficulty(difficulty);
+    this.changeDisplay(display);
+  }
 
-  // disableDifficultyButton(difficulty) {
-  //   let numPerCategory;
-  //   let buttonState;
-  //   if (!this.state.numQuestions) {
-  //     buttonState = true
-  //   } else {
-  //     buttonState = false
-  //   }
-  //   return buttonState;
-  // };
+  setLengthAndDisplay(length, display) {
+    this.setLength(length);
+    this.changeDisplay(display);
+  } 
+
+  setDifficulty(value) {
+    this.setState({difficulty: value})
+  }
+
+  setLength(value) {
+    this.setState({length: value})
+  };
+
+  changeDisplay(value) {
+    this.setState({display: value})
+  }
+
+
+
+  // finish this fuction ***********
 
   disableDifficultyButton(difficulty) {
-    let numPerCategory;
-    let buttonState;
-
-    if (!this.state.numQuestions) {
-      buttonState = true
-    } else if (difficulty === "Easy") {
-
-    } else {
-      buttonState = false
-    }
-    return buttonState;
+    if(this.state.numQuestion) {
+    let easyLength = this.state.numQuestion.category_question_count.total_easy_question_count;
+    let mediumLength = this.state.numQuestion.category_question_count.total_medium_question_count;
+    let hardLength = this.state.numQuestion.category_question_count.total_hard_question_count;
+    let randomLength = this.state.numQuestion.category_question_count.total_question_count;
+    } else return
   }; 
+
+
+
 
   disableLengthButton(length) {
     if(!this.state.difficulty) {
@@ -111,36 +136,40 @@ class App extends Component {
       <div className="App">
         <p>Quiz!</p>
 
-    {/* find a better way to deal with this */}
-    {this.state.loading ? 
-      <DropDown 
-        label="Choose a category" 
-        categories={this.state.default} 
-        selectName={"categorySelect"} 
-        getCategoryID={this.getCategoryID} 
-        getNumberOfQuestions={this.getNumberOfQuestions}
-      /> : 
-      <DropDown 
+    {/* designate props between render and return, pass them below, saves space?
+    {this.state.display = "Loading" ? <Loading/> :
+     this.state.display = "Category" ? <Category/> : 
+     this.state.display = "Difficulty" ? <Difficulty/> :
+     this.state.display = "Length" ? <Length/> :
+     this.state.display = "Quiz" ? <Quiz/> :
+     <Loading/>
+    } */}
+
+    {this.state.display === "Loading" ?
+      // replace the first instance of Category with a loading screen
+      <Loading/> : 
+      <Category 
         label="Choose a category" 
         categories={this.state.categories} 
         selectName={"categorySelect"} 
         getCategoryID={this.getCategoryID} 
         getNumberOfQuestions={this.getNumberOfQuestions}
+        changeDisplay={this.changeDisplay}
       />
     }
 
-    {/* CSS should mean I don't need this */}
-    <br></br>
-    <br></br>
+    {/* <Difficulty
+      disableDifficultyButton={this.disableDifficultyButton}
+      setDifficulty={this.setDifficulty}
+    /> */}
 
     {"Choose difficulty"}
     {
       <Button
         disabled={this.disableDifficultyButton("Easy")}
-        // this.disableDifficultyButton(this.state.numQuestions.category_question_count.total_easy_question_count)
         name={"Easy"}
         value={"Easy"}
-        onClick={() => this.setState({difficulty: "Easy"})}
+        onClick={() => this.setDifficultyAndDisplay("Easy", "Length")}
         buttonText={"Easy"}
       />
     }
@@ -149,7 +178,7 @@ class App extends Component {
         disabled={!this.state.numQuestions}
         name={"Medium"}
         value={"Medium"}
-        onClick={() => this.setState({difficulty: "Medium"})}
+        onClick={() => this.setDifficultyAndDisplay("Medium", "Length")}
         buttonText={"Medium"}
       />
     }
@@ -158,7 +187,7 @@ class App extends Component {
         disabled={!this.state.numQuestions}
         name={"Hard"}
         value={"Hard"}
-        onClick={() => this.setState({difficulty: "Hard"})}
+        onClick={() => this.setDifficultyAndDisplay("Hard", "Length")}
         buttonText={"Hard"}
       />
     }
@@ -167,7 +196,7 @@ class App extends Component {
         disabled={!this.state.numQuestions}
         name={"Random"}
         value={"Random"}
-        onClick={() => this.setState({difficulty: "Random"})}
+        onClick={() => this.setDifficultyAndDisplay("Random", "Length")}
         buttonText={"Random"}
       />
     }
@@ -176,6 +205,7 @@ class App extends Component {
     <br></br>
     <br></br>
 
+
     {"Choose length"}
     {/* 10 questions */}
     {
@@ -183,7 +213,7 @@ class App extends Component {
         disabled={this.disableLengthButton(10)}
         name={"Short"}
         value={"Short"}
-        onClick={() => console.log("Short button clicked!")}
+        onClick={() => this.setLengthAndDisplay(10, "Quiz")}
         buttonText={"Short"}
       />
     }
@@ -193,7 +223,7 @@ class App extends Component {
         disabled={this.disableLengthButton(20)}
         name={"Medium"}
         value={"Medium"}
-        onClick={() => console.log("Medium button clicked!")}
+        onClick={() => this.setLengthAndDisplay(20, "Quiz")}
         buttonText={"Medium"}
       />
     }
@@ -203,7 +233,7 @@ class App extends Component {
         disabled={this.disableLengthButton(30)}
         name={"Long"}
         value={"Long"}
-        onClick={() => console.log("Long button clicked!")}
+        onClick={() => this.setLengthAndDisplay(30, "Quiz")}
         buttonText={"Long"}
       />
     }
