@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import Button from './components/button/Button';
+// import Button from './components/button/Button';
 
 import Category from './components/category/Category';
 import Difficulty from './components/difficulty/Difficulty';
@@ -97,17 +97,32 @@ class App extends Component {
     this.setState({display: value})
   }
 
-
-
-  // finish this fuction ***********
-
+  // returns boolean to apply to disable property of <Button/>
   disableDifficultyButton(difficulty) {
-    if(this.state.numQuestion) {
-    let easyLength = this.state.numQuestion.category_question_count.total_easy_question_count;
-    let mediumLength = this.state.numQuestion.category_question_count.total_medium_question_count;
-    let hardLength = this.state.numQuestion.category_question_count.total_hard_question_count;
-    let randomLength = this.state.numQuestion.category_question_count.total_question_count;
-    } else return
+
+    let buttonState = false;
+    // let easyLength;
+    // let mediumLength;
+    // let hardLength;
+    // let randomLength;
+
+    // if(this.state.numQuestions) {
+    //   easyLength = this.state.numQuestion.category_question_count.total_easy_question_count;
+    //   mediumLength = this.state.numQuestion.category_question_count.total_medium_question_count;
+    //   hardLength = this.state.numQuestion.category_question_count.total_hard_question_count;
+    //   randomLength = this.state.numQuestion.category_question_count.total_question_count;
+
+    //   if(difficulty === "Easy" && easyLength < 10) {
+    //     buttonState = true
+    //   } else if (difficulty === "Medium" && mediumLength < 10) {
+    //     buttonState = true
+    //   } else if (difficulty === "Hard" && hardLength < 10) {
+    //     buttonState = true
+    //   } else if (difficulty === "Random" && randomLength < 10) {
+    //     buttonState = true
+    //   } else buttonState = false
+    // } else buttonState = true;
+    return buttonState;
   }; 
 
 
@@ -136,17 +151,28 @@ class App extends Component {
       <div className="App">
         <p>Quiz!</p>
 
-    {/* designate props between render and return, pass them below, saves space?
-    {this.state.display = "Loading" ? <Loading/> :
-     this.state.display = "Category" ? <Category/> : 
-     this.state.display = "Difficulty" ? <Difficulty/> :
-     this.state.display = "Length" ? <Length/> :
-     this.state.display = "Quiz" ? <Quiz/> :
+    {this.state.display === "Loading" ? <Loading/> :
+     this.state.display === "Category" ? <Category
+        label="Choose a category" 
+        categories={this.state.categories} 
+        selectName={"categorySelect"} 
+        getCategoryID={this.getCategoryID} 
+        getNumberOfQuestions={this.getNumberOfQuestions}
+        changeDisplay={this.changeDisplay}
+     /> : 
+     this.state.display === "Difficulty" ? <Difficulty
+        disableDifficultyButton={this.disableDifficultyButton}
+        setDifficultyAndDisplay={this.setDifficultyAndDisplay}
+     /> :
+     this.state.display === "Length" ? <Length
+        disableLengthButton={this.disableLengthButton}
+        setLengthAndDisplay={this.setLengthAndDisplay}
+     /> :
+     this.state.display === "Quiz" ? <Quiz/> :
      <Loading/>
-    } */}
+    }
 
-    {this.state.display === "Loading" ?
-      // replace the first instance of Category with a loading screen
+    {/* {this.state.display === "Loading" ?
       <Loading/> : 
       <Category 
         label="Choose a category" 
@@ -156,14 +182,9 @@ class App extends Component {
         getNumberOfQuestions={this.getNumberOfQuestions}
         changeDisplay={this.changeDisplay}
       />
-    }
+    } */}
 
-    {/* <Difficulty
-      disableDifficultyButton={this.disableDifficultyButton}
-      setDifficulty={this.setDifficulty}
-    /> */}
-
-    {"Choose difficulty"}
+    {/* {"Choose difficulty"}
     {
       <Button
         disabled={this.disableDifficultyButton("Easy")}
@@ -172,10 +193,10 @@ class App extends Component {
         onClick={() => this.setDifficultyAndDisplay("Easy", "Length")}
         buttonText={"Easy"}
       />
-    }
-    {
+    } */}
+    {/* {
       <Button
-        disabled={!this.state.numQuestions}
+        disabled={this.disableDifficultyButton("Medium")}
         name={"Medium"}
         value={"Medium"}
         onClick={() => this.setDifficultyAndDisplay("Medium", "Length")}
@@ -184,7 +205,7 @@ class App extends Component {
     }
     {
       <Button
-        disabled={!this.state.numQuestions}
+        disabled={this.disableDifficultyButton("Hard")}
         name={"Hard"}
         value={"Hard"}
         onClick={() => this.setDifficultyAndDisplay("Hard", "Length")}
@@ -193,22 +214,22 @@ class App extends Component {
     }
     {
       <Button
-        disabled={!this.state.numQuestions}
+        disabled={this.disableDifficultyButton("Random")}
         name={"Random"}
         value={"Random"}
         onClick={() => this.setDifficultyAndDisplay("Random", "Length")}
         buttonText={"Random"}
       />
-    }
-
-    {/* CSS should mean I don't need this */}
-    <br></br>
-    <br></br>
+    } */}
 
 
-    {"Choose length"}
+    {/* <br></br> */}
+    {/* <br></br> */}
+
+
+    {/* {"Choose length"} */}
     {/* 10 questions */}
-    {
+    {/* {
       <Button
         disabled={this.disableLengthButton(10)}
         name={"Short"}
@@ -216,9 +237,9 @@ class App extends Component {
         onClick={() => this.setLengthAndDisplay(10, "Quiz")}
         buttonText={"Short"}
       />
-    }
+    } */}
     {/* 20 questions */}
-    {
+    {/* {
       <Button
         disabled={this.disableLengthButton(20)}
         name={"Medium"}
@@ -226,9 +247,9 @@ class App extends Component {
         onClick={() => this.setLengthAndDisplay(20, "Quiz")}
         buttonText={"Medium"}
       />
-    }
+    } */}
     {/* 30 questions */}
-    {
+    {/* {
       <Button
         disabled={this.disableLengthButton(30)}
         name={"Long"}
@@ -236,7 +257,7 @@ class App extends Component {
         onClick={() => this.setLengthAndDisplay(30, "Quiz")}
         buttonText={"Long"}
       />
-    }
+    } */}
       </div>
     )
   }

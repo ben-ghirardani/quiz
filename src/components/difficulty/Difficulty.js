@@ -1,43 +1,43 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Button from '../button/Button';
 
-export default function Difficulty () {
+export default function difficulty (props) {
   return <div>
 
   {"Choose difficulty"}
     {
       <Button
-        disabled={this.props.disableDifficultyButton("Easy")}
+        disabled={props.disableDifficultyButton("Easy")}
         name={"Easy"}
         value={"Easy"}
-        onClick={() => this.props.setDifficultyAndDisplay("Easy", "Length")}
+        onClick={() => props.setDifficultyAndDisplay("Easy", "Length")}
         buttonText={"Easy"}
       />
     }
     {
       <Button
-        disabled={this.props.disableDifficultyButton("Medium")}
+        disabled={props.disableDifficultyButton("Medium")}
         name={"Medium"}
         value={"Medium"}
-        onClick={() => this.setDifficultyAndDisplay("Medium", "Length")}
+        onClick={() => props.setDifficultyAndDisplay("Medium", "Length")}
         buttonText={"Medium"}
       />
     }
     {
       <Button
-        disabled={this.props.disableDifficultyButton("Hard")}
+        disabled={props.disableDifficultyButton("Hard")}
         name={"Hard"}
         value={"Hard"}
-        onClick={() => this.setDifficultyAndDisplay("Hard", "Length")}
+        onClick={() => props.setDifficultyAndDisplay("Hard", "Length")}
         buttonText={"Hard"}
       />
     }
     {
       <Button
-        disabled={this.props.disableDifficultyButton("Random")}
+        disabled={props.disableDifficultyButton("Random")}
         name={"Random"}
         value={"Random"}
-        onClick={() => this.setDifficultyAndDisplay("Random", "Length")}
+        onClick={() => props.setDifficultyAndDisplay("Random", "Length")}
         buttonText={"Random"}
       />
     }

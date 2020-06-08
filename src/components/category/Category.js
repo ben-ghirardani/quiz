@@ -16,7 +16,6 @@ export default class Category extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-
     if(this.state.value === "") {
       return
     } else {
@@ -31,7 +30,6 @@ export default class Category extends Component {
       <form onSubmit={this.handleSubmit}>
         <label> {this.props.label}
         <select name={this.props.selectName} value={this.state.value} onChange={this.handleChange} >
-          {/* <option value="Choose category..."> */}
           <option value="" hidden>
             Choose category...
           </option>
