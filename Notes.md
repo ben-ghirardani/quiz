@@ -9,11 +9,3 @@ Can currently select difficulty before selecting a category, create condition to
 
 When button is clicked, have it stay highlighted.
 - pass styles to button
-
-
-
-***
-  Refactor display completely -> show drop down, and only display difficulty after a choice has been made, same with length.
-***
-
-3 new components, Category, Difficulty and Length. Each displays, takes user input, then next component is rendered in its place using user input.

@@ -20,6 +20,7 @@ export default class Category extends Component {
       return
     } else {
       let categoryID = this.props.getCategoryID(this.state.value);
+      // annonymous async funtion here to make sure first line happens first?
       this.props.getNumberOfQuestions(categoryID);
       this.props.changeDisplay("Difficulty");
     }

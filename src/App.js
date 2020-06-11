@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 
-// import Button from './components/button/Button';
-
 import Category from './components/category/Category';
 import Difficulty from './components/difficulty/Difficulty';
 import Length from './components/length/Length';
@@ -20,10 +18,7 @@ class App extends Component {
         display: "Loading",
         numQuestions: null,
         difficulty: null,
-        length: null,
-        default: [
-                {id: 123456789, name: "loading"}
-              ]
+        length: null
       }
       this.getCategories = this.getCategories.bind(this);
       this.getCategoryID = this.getCategoryID.bind(this);
@@ -100,32 +95,30 @@ class App extends Component {
   // returns boolean to apply to disable property of <Button/>
   disableDifficultyButton(difficulty) {
 
-    let buttonState = false;
-    // let easyLength;
-    // let mediumLength;
-    // let hardLength;
-    // let randomLength;
+    let buttonState;
+    let easyLength;
+    let mediumLength;
+    let hardLength;
+    let randomLength;
 
-    // if(this.state.numQuestions) {
-    //   easyLength = this.state.numQuestion.category_question_count.total_easy_question_count;
-    //   mediumLength = this.state.numQuestion.category_question_count.total_medium_question_count;
-    //   hardLength = this.state.numQuestion.category_question_count.total_hard_question_count;
-    //   randomLength = this.state.numQuestion.category_question_count.total_question_count;
+    if(this.state.numQuestions) {
+      easyLength = this.state.numQuestions.category_question_count.total_easy_question_count;
+      mediumLength = this.state.numQuestions.category_question_count.total_medium_question_count;
+      hardLength = this.state.numQuestions.category_question_count.total_hard_question_count;
+      randomLength = this.state.numQuestions.category_question_count.total_question_count;
 
-    //   if(difficulty === "Easy" && easyLength < 10) {
-    //     buttonState = true
-    //   } else if (difficulty === "Medium" && mediumLength < 10) {
-    //     buttonState = true
-    //   } else if (difficulty === "Hard" && hardLength < 10) {
-    //     buttonState = true
-    //   } else if (difficulty === "Random" && randomLength < 10) {
-    //     buttonState = true
-    //   } else buttonState = false
-    // } else buttonState = true;
+      if(difficulty === "Easy" && easyLength < 10) {
+        buttonState = true
+      } else if (difficulty === "Medium" && mediumLength < 10) {
+        buttonState = true
+      } else if (difficulty === "Hard" && hardLength < 10) {
+        buttonState = true
+      } else if (difficulty === "Random" && randomLength < 10) {
+        buttonState = true
+      } else buttonState = false
+    } else buttonState = true;
     return buttonState;
   }; 
-
-
 
 
   disableLengthButton(length) {
@@ -172,92 +165,6 @@ class App extends Component {
      <Loading/>
     }
 
-    {/* {this.state.display === "Loading" ?
-      <Loading/> : 
-      <Category 
-        label="Choose a category" 
-        categories={this.state.categories} 
-        selectName={"categorySelect"} 
-        getCategoryID={this.getCategoryID} 
-        getNumberOfQuestions={this.getNumberOfQuestions}
-        changeDisplay={this.changeDisplay}
-      />
-    } */}
-
-    {/* {"Choose difficulty"}
-    {
-      <Button
-        disabled={this.disableDifficultyButton("Easy")}
-        name={"Easy"}
-        value={"Easy"}
-        onClick={() => this.setDifficultyAndDisplay("Easy", "Length")}
-        buttonText={"Easy"}
-      />
-    } */}
-    {/* {
-      <Button
-        disabled={this.disableDifficultyButton("Medium")}
-        name={"Medium"}
-        value={"Medium"}
-        onClick={() => this.setDifficultyAndDisplay("Medium", "Length")}
-        buttonText={"Medium"}
-      />
-    }
-    {
-      <Button
-        disabled={this.disableDifficultyButton("Hard")}
-        name={"Hard"}
-        value={"Hard"}
-        onClick={() => this.setDifficultyAndDisplay("Hard", "Length")}
-        buttonText={"Hard"}
-      />
-    }
-    {
-      <Button
-        disabled={this.disableDifficultyButton("Random")}
-        name={"Random"}
-        value={"Random"}
-        onClick={() => this.setDifficultyAndDisplay("Random", "Length")}
-        buttonText={"Random"}
-      />
-    } */}
-
-
-    {/* <br></br> */}
-    {/* <br></br> */}
-
-
-    {/* {"Choose length"} */}
-    {/* 10 questions */}
-    {/* {
-      <Button
-        disabled={this.disableLengthButton(10)}
-        name={"Short"}
-        value={"Short"}
-        onClick={() => this.setLengthAndDisplay(10, "Quiz")}
-        buttonText={"Short"}
-      />
-    } */}
-    {/* 20 questions */}
-    {/* {
-      <Button
-        disabled={this.disableLengthButton(20)}
-        name={"Medium"}
-        value={"Medium"}
-        onClick={() => this.setLengthAndDisplay(20, "Quiz")}
-        buttonText={"Medium"}
-      />
-    } */}
-    {/* 30 questions */}
-    {/* {
-      <Button
-        disabled={this.disableLengthButton(30)}
-        name={"Long"}
-        value={"Long"}
-        onClick={() => this.setLengthAndDisplay(30, "Quiz")}
-        buttonText={"Long"}
-      />
-    } */}
       </div>
     )
   }
