@@ -125,16 +125,16 @@ class App extends Component {
     if(!this.state.difficulty) {
       return true
     } else if ( 
-      this.state.difficulty === "Easy" && this.state.numQuestions.category_question_count.total_easy_question_count < length
+      this.state.difficulty === "easy" && this.state.numQuestions.category_question_count.total_easy_question_count < length
     ) {return true} 
       else if ( 
-      this.state.difficulty === "Medium" && this.state.numQuestions.category_question_count.total_medium_question_count < length
+      this.state.difficulty === "medium" && this.state.numQuestions.category_question_count.total_medium_question_count < length
     ) {return true} 
       else if (
-      this.state.difficulty === "Hard" && this.state.numQuestions.category_question_count.total_hard_question_count < length
+      this.state.difficulty === "hard" && this.state.numQuestions.category_question_count.total_hard_question_count < length
     ) {return true} 
       else if (
-      this.state.difficulty === "Random" && this.state.numQuestions.category_question_count.total_question_count < length
+      this.state.difficulty === "random" && this.state.numQuestions.category_question_count.total_question_count < length
     ) {return true}
     return false
   };
@@ -161,7 +161,11 @@ class App extends Component {
         disableLengthButton={this.disableLengthButton}
         setLengthAndDisplay={this.setLengthAndDisplay}
      /> :
-     this.state.display === "Quiz" ? <Quiz/> :
+     this.state.display === "Quiz" ? <Quiz
+        amount={this.state.length}
+        category={this.state.numQuestions.category_id}
+        difficulty={this.state.difficulty}
+     /> :
      <Loading/>
     }
 

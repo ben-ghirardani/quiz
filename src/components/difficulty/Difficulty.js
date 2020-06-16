@@ -10,7 +10,7 @@ export default function difficulty (props) {
         disabled={props.disableDifficultyButton("Easy")}
         name={"Easy"}
         value={"Easy"}
-        onClick={() => props.setDifficultyAndDisplay("Easy", "Length")}
+        onClick={() => props.setDifficultyAndDisplay("easy", "Length")}
         buttonText={"Easy"}
       />
     }
@@ -19,7 +19,7 @@ export default function difficulty (props) {
         disabled={props.disableDifficultyButton("Medium")}
         name={"Medium"}
         value={"Medium"}
-        onClick={() => props.setDifficultyAndDisplay("Medium", "Length")}
+        onClick={() => props.setDifficultyAndDisplay("medium", "Length")}
         buttonText={"Medium"}
       />
     }
@@ -28,7 +28,7 @@ export default function difficulty (props) {
         disabled={props.disableDifficultyButton("Hard")}
         name={"Hard"}
         value={"Hard"}
-        onClick={() => props.setDifficultyAndDisplay("Hard", "Length")}
+        onClick={() => props.setDifficultyAndDisplay("hard", "Length")}
         buttonText={"Hard"}
       />
     }
@@ -37,7 +37,7 @@ export default function difficulty (props) {
         disabled={props.disableDifficultyButton("Random")}
         name={"Random"}
         value={"Random"}
-        onClick={() => props.setDifficultyAndDisplay("Random", "Length")}
+        onClick={() => props.setDifficultyAndDisplay("random", "Length")}
         buttonText={"Random"}
       />
     }
