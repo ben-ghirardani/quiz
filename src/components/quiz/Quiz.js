@@ -10,18 +10,18 @@ export default class Quiz extends Component {
   };
 
   componentDidMount() {
-    // fetch data using URL from createAPIURL
+    this.getQuestions();
   }
 
   async getQuestions() {
     let URL = this.createAPIURL(this.props.amount, this.props.category, this.props.difficulty);
     let response = await fetch(URL);
     let data = await response.json();
+    this.props.addQuestions(data);
   };
 
   createAPIURL(amount, category, difficulty) {
     let adjustedDifficulty;
-
     // unpick previous code to make this less fussy?
     if(difficulty === "random") {
       adjustedDifficulty = ""

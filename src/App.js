@@ -13,8 +13,7 @@ class App extends Component {
     super(props);
       this.state = {
         categories: null,
-        // is this being used?
-        chosenCategories: [],
+        questions: null,
         display: "Loading",
         numQuestions: null,
         difficulty: null,
@@ -30,6 +29,7 @@ class App extends Component {
       this.setDifficultyAndDisplay = this.setDifficultyAndDisplay.bind(this);
       this.setLength = this.setLength.bind(this);
       this.setLengthAndDisplay = this.setLengthAndDisplay.bind(this);
+      this.addQuestions = this.addQuestions.bind(this);
   }
 
   componentDidMount() {
@@ -139,6 +139,10 @@ class App extends Component {
     return false
   };
 
+  addQuestions(data) {
+    this.setState({questions: data})
+  };
+
   render() {
     return(
       <div className="App">
@@ -165,6 +169,7 @@ class App extends Component {
         amount={this.state.length}
         category={this.state.numQuestions.category_id}
         difficulty={this.state.difficulty}
+        addQuestions={this.addQuestions}
      /> :
      <Loading/>
     }
