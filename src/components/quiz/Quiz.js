@@ -17,6 +17,8 @@ export default class Quiz extends Component {
     let URL = this.createAPIURL(this.props.amount, this.props.category, this.props.difficulty);
     let response = await fetch(URL);
     let data = await response.json();
+    // add a function here that sorts the api call. Create a new array of objects: question, randomized sort of answers,
+    // type, correct answer, feed that into function below
     this.props.addQuestions(data);
   };
 
