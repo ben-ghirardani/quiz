@@ -92,7 +92,7 @@ class App extends Component {
     this.setState({display: value})
   }
 
-  // returns boolean to apply to disable property of <Button/>
+  // returns boolean to apply to 'disable' property of <Button/>
   disableDifficultyButton(difficulty) {
 
     let buttonState;
@@ -170,6 +170,7 @@ class App extends Component {
         category={this.state.numQuestions.category_id}
         difficulty={this.state.difficulty}
         addQuestions={this.addQuestions}
+        questions={this.state.questions}
      /> :
      <Loading/>
     }

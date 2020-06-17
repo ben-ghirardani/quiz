@@ -9,8 +9,3 @@ Can currently select difficulty before selecting a category, create condition to
 
 When button is clicked, have it stay highlighted.
 - pass styles to button
-
-
-***
-    When selecting difficulty, choosing 'random' causes all length buttons to grey out.
-***

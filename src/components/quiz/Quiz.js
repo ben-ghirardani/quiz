@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import GetQuestions from '../get_questions/GetQuestions';
+import Loading from '../loading/Loading.js';
 
 export default class Quiz extends Component {
 
@@ -34,8 +34,9 @@ export default class Quiz extends Component {
 
   render() {
     return(
-      // conditinally render Getting Questions until data has been pulled, then display questions
-      <div>Quiz</div>
+      <>
+        {this.props.questions? <div>Map throught list of questions, render Question type based on properties</div> : <Loading/>}
+      </>
     )
   }
 
