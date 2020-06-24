@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Loading from '../loading/Loading.js';
+import sortQuestions from '../sort_questions/SortQuestions.js'
 
 export default class Quiz extends Component {
 
@@ -17,14 +18,14 @@ export default class Quiz extends Component {
     let URL = this.createAPIURL(this.props.amount, this.props.category, this.props.difficulty);
     let response = await fetch(URL);
     let data = await response.json();
-    // add a function here that sorts the api call. Create a new array of objects: question, randomized sort of answers,
-    // type, correct answer, feed that into function below
-    this.props.addQuestions(data);
+    let { results } = data;
+    let sortedData = await sortQuestions(results)
+    this.props.addQuestions(sortedData);
   };
 
   createAPIURL(amount, category, difficulty) {
     let adjustedDifficulty;
-    // unpick previous code to make this less fussy?
+    // unpick code that feeds into this function to make it less fussy?
     if(difficulty === "random") {
       adjustedDifficulty = ""
     } else {

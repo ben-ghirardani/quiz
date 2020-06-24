@@ -1,31 +1,22 @@
-import React from 'react';
+import fisherYatesShuffle from '../fisher_yates_shuffle/FisherYatesShuffle.js'
 
-export default function sortQuestions(props) {
+// map through API response of questions, create new array of sorted questions
+export default function sortQuestions(array) {
+  
+  let sortedQuestions = [];
+  let number = 1;
 
+  array.forEach(item => {
+    // default question format
+    let question = {
+    type: item.type,
+    questionNumber: number,
+    question: item.question,
+    answers: fisherYatesShuffle(item.incorrect_answers.concat(item.correct_answer)),
+    correctAnswer: item.correct_answer
+  };
+    sortedQuestions.push(question);
+    number = number + 1;
+  });
+  return sortedQuestions;
 };
-
-// Example of response - 
-
-// questions
-// {response_code: 0, results: Array(20)}
-// response_code
-// 0
-
-// results
-// [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, …]
-
-// 0
-// {category: "Entertainment: Television", correct_ans…}
-// category
-// "Entertainment: Television"
-// correct_answer
-// "12"
-// difficulty
-// "medium"
-
-// incorrect_answers
-// ["11", "13", "15"]
-// question
-// "In the Doctor Who universe, how many times can a time lord normally regenerate?"
-// type
-// "multiple"
