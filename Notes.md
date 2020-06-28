@@ -5,7 +5,9 @@ From App.js
 // https://opentdb.com/api_count.php?category=CATEGORY_ID_HERE
 // contains total questions, no. of easy, medium and hard
 
-Can currently select difficulty before selecting a category, create condition to prevent this?
-
 When button is clicked, have it stay highlighted.
 - pass styles to button
+
+***
+  Display the chosen category somewhere
+***

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Loading from '../loading/Loading.js';
-import sortQuestions from '../sort_questions/SortQuestions.js'
+import sortQuestions from '../sort_questions/SortQuestions.js';
+import GenerateQuestions from '../generate_questions/GenerateQuestions.js';
 
 export default class Quiz extends Component {
 
@@ -38,7 +39,7 @@ export default class Quiz extends Component {
   render() {
     return(
       <>
-        {this.props.questions? <div>Map throught list of questions, render Question type based on properties</div> : <Loading/>}
+        {this.props.questions? <GenerateQuestions questions={this.props.questions}/> : <Loading/>}
       </>
     )
   }
