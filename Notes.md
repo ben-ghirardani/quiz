@@ -11,3 +11,6 @@ When button is clicked, have it stay highlighted.
 ***
   Display the chosen category somewhere
 ***
+
+
+Show one question at a time,show a progress bar of how many questions have been answered.

@@ -14,6 +14,9 @@ class App extends Component {
       this.state = {
         categories: null,
         questions: null,
+        answers: null,
+        arrayIndex: 0,
+        results: 0,
         display: "Loading",
         numQuestions: null,
         difficulty: null,
@@ -30,6 +33,7 @@ class App extends Component {
       this.setLength = this.setLength.bind(this);
       this.setLengthAndDisplay = this.setLengthAndDisplay.bind(this);
       this.addQuestions = this.addQuestions.bind(this);
+      this.increaseArrayIndex = this.increaseArrayIndex.bind(this);
   }
 
   componentDidMount() {
@@ -65,9 +69,6 @@ class App extends Component {
     let data = await response.json();
     this.setState({numQuestions: data})
   }
-
-// when randomizing the array of answers to each question use the following Fisher-Yates (aka Knuth) Shuffle -
-// https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 
   // function to combine setDifficulty and changeDisplay for difficulty buttons
   setDifficultyAndDisplay(difficulty, display) {
@@ -143,6 +144,12 @@ class App extends Component {
     this.setState({questions: data})
   };
 
+  increaseArrayIndex() {
+    let arrayIndex = this.state.arrayIndex;
+    let newIndex = arrayIndex + 1;
+    this.setState({arrayIndex: newIndex});
+  };
+
   render() {
     return(
       <div className="App">
@@ -171,6 +178,8 @@ class App extends Component {
         difficulty={this.state.difficulty}
         addQuestions={this.addQuestions}
         questions={this.state.questions}
+        arrayIndex={this.state.arrayIndex}
+        increaseArrayIndex={this.increaseArrayIndex}
      /> :
      <Loading/>
     }
