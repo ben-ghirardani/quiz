@@ -13,4 +13,14 @@ When button is clicked, have it stay highlighted.
 ***
 
 
-Show one question at a time,show a progress bar of how many questions have been answered.
+Bugs to solve - 
+
+1) pressing next on the last question crashes as program expects another question.
+2) once a radio button is selected, it remains selected for the next question, need to default to unselected.
+  defaultChecked={false} doesn't work
+3) possible to press next even if no option has been selected.
+
+Next -
+4) multiple & boolean - refactor clickNext to check answer against correct answer and keep a score in state.
+
+5) Re-factor the ternery in the render method of <Quiz/>, too long 

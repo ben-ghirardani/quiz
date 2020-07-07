@@ -14,9 +14,8 @@ class App extends Component {
       this.state = {
         categories: null,
         questions: null,
-        answers: null,
         arrayIndex: 0,
-        results: 0,
+        score: 0,
         display: "Loading",
         numQuestions: null,
         difficulty: null,
@@ -34,6 +33,7 @@ class App extends Component {
       this.setLengthAndDisplay = this.setLengthAndDisplay.bind(this);
       this.addQuestions = this.addQuestions.bind(this);
       this.increaseArrayIndex = this.increaseArrayIndex.bind(this);
+      this.addToScore = this.addToScore.bind(this);
   }
 
   componentDidMount() {
@@ -150,6 +150,12 @@ class App extends Component {
     this.setState({arrayIndex: newIndex});
   };
 
+  addToScore() {
+    let score = this.state.score;
+    let newScore = score + 1;
+    this.setState({score: newScore})
+  }
+
   render() {
     return(
       <div className="App">
@@ -180,6 +186,7 @@ class App extends Component {
         questions={this.state.questions}
         arrayIndex={this.state.arrayIndex}
         increaseArrayIndex={this.increaseArrayIndex}
+        addToScore={this.addToScore}
      /> :
      <Loading/>
     }

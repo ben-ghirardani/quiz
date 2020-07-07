@@ -11,41 +11,37 @@ export default class GenerateQuestions extends Component {
 
   constructor(props) {
     super(props);
-    this.getQuestions = this.getQuestions.bind(this);
+    this.showQuestion = this.showQuestion.bind(this);
   }
 
-  getQuestions(array) {
-    let questions = [];
-    array.forEach(item => {
-      let result;
-      // better name for object below?
-      let data = {
-        type: item.type,
-        questionNumber: item.questionNumber,
-        question: item.question,
-        answers: item.answers,
-        correctAnswer: item.correctAnswer,
-        increaseArrayIndex: this.props.increaseArrayIndex
-      }
-      item.type === "multiple" ? result = <Multiple data={data}/> : result = <Boolean data={data}/>
-      questions.push(result);
-    });
-    return questions;
+  // is it too fussy to creat an object and pass it to the question component, rather than it's contents directly as props?
+
+  showQuestion(array, index) {
+    let question = array[index];
+    let result;
+    let data = {
+      type: question.type,
+      questionNumber: question.questionNumber,
+      // must be a better way to write the line below!
+      question: question.question,
+      answers: question.answers,
+      correctAnswer: question.correctAnswer,
+      increaseArrayIndex: this.props.increaseArrayIndex,
+      addToScore: this.props.addToScore
+    };
+    question.type === "multiple" ? result = <Multiple data={data} /> : result = <Boolean data={data} />
+    return result;
   }
 
-  // increaseArrayIndex is now available as propss
+  // ***
+  // while index is less than array... if not show results component
+  // ***
 
-  // getQuestions(array) {
-  //   let question = array[this.props.arrayIndex];
-
-  //   console.log(question);
-  //   // return question;
-  //   return <div></div>
-  // }
+  // ternery sttement - once arrayIndex reaches array length, show results instead
 
   render() {
     return(
-      this.getQuestions(this.props.questions)
+      this.showQuestion(this.props.questions, this.props.arrayIndex)
     )
   }
 

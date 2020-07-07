@@ -39,8 +39,15 @@ export default class Quiz extends Component {
   render() {
     return(
       <>
-        {/* can I pass all props then destructure? Ternery line too long */}
-        {this.props.questions ? <GenerateQuestions questions={this.props.questions} arrayIndex={this.props.arrayIndex} increaseArrayIndex={this.props.increaseArrayIndex} /> : <Loading/>}
+        {/* far too much being passed for a ternery, reactor */}
+        {this.props.questions ? 
+          <GenerateQuestions 
+            questions={this.props.questions} 
+            arrayIndex={this.props.arrayIndex} 
+            increaseArrayIndex={this.props.increaseArrayIndex}
+            addToScore={this.props.addToScore}
+          /> : 
+          <Loading/>}
       </>
     )
   }
