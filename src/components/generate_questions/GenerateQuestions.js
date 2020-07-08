@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Boolean from '../question/boolean/Boolean.js';
 import Multiple from  '../question/multiple/Multiple.js';
+import Results from '../results/Results.js';
 
 // ***
 // *** can this be a functional component, add the questions to an array in state, create a class to display questions one by one
@@ -33,15 +34,17 @@ export default class GenerateQuestions extends Component {
     return result;
   }
 
-  // ***
-  // while index is less than array... if not show results component
-  // ***
-
-  // ternery sttement - once arrayIndex reaches array length, show results instead
+  // ternery statement - once arrayIndex reaches array length, show results instead
 
   render() {
+    let index = this.props.arrayIndex;
+    let questions = this.props.questions;
+    let score = this.props.score;
     return(
-      this.showQuestion(this.props.questions, this.props.arrayIndex)
+      // this.showQuestion(questions, index)
+      <div>
+        {index < questions.length ? this.showQuestion(questions, index) : <Results quizLength={questions.length} score={score}/>}
+      </div>
     )
   }
 

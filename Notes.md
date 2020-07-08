@@ -18,9 +18,5 @@ Bugs to solve -
 1) pressing next on the last question crashes as program expects another question.
 2) once a radio button is selected, it remains selected for the next question, need to default to unselected.
   defaultChecked={false} doesn't work
-3) possible to press next even if no option has been selected.
-
-Next -
-4) multiple & boolean - refactor clickNext to check answer against correct answer and keep a score in state.
-
-5) Re-factor the ternery in the render method of <Quiz/>, too long 
+3) Re-factor the ternery in the render method of <Quiz/>, too long 
+4) Is score updating quickly enough? Include promise to make sure it's being captured before moving to next screen?

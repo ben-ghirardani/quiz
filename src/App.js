@@ -187,6 +187,7 @@ class App extends Component {
         arrayIndex={this.state.arrayIndex}
         increaseArrayIndex={this.increaseArrayIndex}
         addToScore={this.addToScore}
+        score={this.state.score}
      /> :
      <Loading/>
     }
