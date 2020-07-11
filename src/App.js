@@ -191,7 +191,6 @@ class App extends Component {
      /> :
      <Loading/>
     }
-
       </div>
     )
   }

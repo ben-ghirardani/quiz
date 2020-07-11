@@ -39,7 +39,6 @@ export default class Quiz extends Component {
   render() {
     return(
       <>
-        {/* far too much being passed for a ternery, reactor */}
         {this.props.questions ? 
           <GenerateQuestions 
             questions={this.props.questions} 
@@ -48,7 +47,8 @@ export default class Quiz extends Component {
             addToScore={this.props.addToScore}
             score={this.props.score}
           /> : 
-          <Loading/>}
+          <Loading/>
+        }
       </>
     )
   }
