@@ -6,6 +6,7 @@ import Difficulty from './components/difficulty/Difficulty';
 import Length from './components/length/Length';
 import Quiz from './components/quiz/Quiz';
 import Loading from './components/loading/Loading';
+import LandingPage from './components/landing_page/LandingPage';
 
 class App extends Component {
 
@@ -16,7 +17,7 @@ class App extends Component {
         questions: null,
         arrayIndex: 0,
         score: 0,
-        display: "Loading",
+        display: "LandingPage",
         numQuestions: null,
         difficulty: null,
         length: null
@@ -40,10 +41,13 @@ class App extends Component {
     this.getCategories()
   };
 
+  // refactor this not to move straight to category, logic in LandingPage to make sure data has been fetched? Or 
+  // just Allow the initial animation to complete, giving enough time for fetch.
   getCategories() {
     fetch('https://opentdb.com/api_category.php')
       .then(response => response.json())
-      .then(data => this.setState({categories: data.trivia_categories, display: "Category"}))
+      // .then(data => this.setState({categories: data.trivia_categories, display: "Category"}))
+      .then(data => this.setState({categories: data.trivia_categories}))
       .catch(error => console.log(error.message));
   };
 
@@ -159,9 +163,9 @@ class App extends Component {
   render() {
     return(
       <div className="App">
-        <p>Quiz!</p>
-
-    {this.state.display === "Loading" ? <Loading/> :
+    {this.state.display === "LandingPage" ? <LandingPage
+      changeDisplay={this.changeDisplay}
+    /> :
      this.state.display === "Category" ? <Category
         label="Choose a category" 
         categories={this.state.categories} 
@@ -188,6 +192,7 @@ class App extends Component {
         increaseArrayIndex={this.increaseArrayIndex}
         addToScore={this.addToScore}
         score={this.state.score}
+        changeDisplay={this.changeDisplay}
      /> :
      <Loading/>
     }
