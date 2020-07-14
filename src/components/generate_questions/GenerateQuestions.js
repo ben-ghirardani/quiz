@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Boolean from '../question/boolean/Boolean.js';
-import Multiple from  '../question/multiple/Multiple.js';
+import Boolean from '../boolean/Boolean.js';
+import Multiple from  '../multiple/Multiple.js';
 import Results from '../results/Results.js';
 
 // ***

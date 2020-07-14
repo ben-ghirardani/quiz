@@ -28,20 +28,22 @@ export default class Category extends Component {
 
   render() {
     return(
-      <form onSubmit={this.handleSubmit}>
-        <label> {this.props.label}
-        <select name={this.props.selectName} value={this.state.value} onChange={this.handleChange} >
-          <option value="" hidden>
-            Choose category...
-          </option>
-          {
-            this.props.categories.map((category) => <option key={category.id} value={category.name}> {category.name} </option> )
-          }
-        </select>
-        </label>
-        {/* Rename Submit to something more appropriate */}
-        <input type="submit" value="Submit" />
-      </form>
+      <div className="category">
+        <form onSubmit={this.handleSubmit}>
+          <label> {this.props.label}
+          <select name={this.props.selectName} value={this.state.value} onChange={this.handleChange} >
+            <option value="" hidden>
+              Choose category...
+            </option>
+            {
+              this.props.categories.map((category) => <option key={category.id} value={category.name}> {category.name} </option> )
+            }
+          </select>
+          </label>
+          {/* Rename Submit to something more appropriate */}
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
     )
   };
 

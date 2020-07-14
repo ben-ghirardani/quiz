@@ -1,3 +1,12 @@
+/* body , #root and html set to 100% to avoid limiting children */
+body, #root, html {
+  height: 100%;
+  width: 100%;
+}
+
 .App {
   text-align: center;
+  height: 100%;
+  width: 100%;
+  border: 3px solid red;
 }

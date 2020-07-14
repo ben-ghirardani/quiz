@@ -26,4 +26,5 @@ Bugs to solve -
 
 6) Update code? Arrow functions and Hooks.
 
-70 Is there anything to stop the same question appearing more than once?
+7) Is there anything to stop the same question appearing more than once?
+8) folder naming convention - folders which are functions in camelCase? Folders which are classes CamelCase?
