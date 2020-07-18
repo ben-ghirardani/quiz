@@ -1,8 +1,9 @@
 import React from 'react';
 import Button from '../button/Button';
+import './Difficulty.css';
 
 export default function difficulty (props) {
-  return <div>
+  return <div className="difficulty">
 
   {"Choose difficulty"}
     {

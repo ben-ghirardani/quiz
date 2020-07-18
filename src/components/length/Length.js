@@ -1,8 +1,9 @@
 import React from 'react';
 import Button from  '../button/Button';
+import './Length.css';
 
 export default function length (props) {
-  return <div>
+  return <div className="length">
         {"Choose length"}
     {/* 10 questions */}
     {

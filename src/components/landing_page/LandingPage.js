@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './LandingPage.css';
 
 export default class LandingPage extends Component {
 
@@ -13,7 +14,7 @@ export default class LandingPage extends Component {
 
   render() {
     return(
-      <div onClick={this.clickButton} >Quiz!</div>
+      <div className="landing-page" onClick={this.clickButton} >Quiz!</div>
     )
   }
 

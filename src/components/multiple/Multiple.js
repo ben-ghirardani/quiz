@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Multiple.css';
 // import parseText from '../parse_text/parseText';
 
 export default class Multiple extends Component {
@@ -27,9 +28,12 @@ export default class Multiple extends Component {
 
     return(
     // will need to make the container a proper component not a fragment in order to add Framer Motion stylings
-    <>
+    <div className="multiple">
       <p> {this.props.data.questionNumber} {this.props.data.question} </p>
-      {/* have a circuler button, with the text to the right, buttons arranged vertically */}
+      {/* have a circular button, with the text to the right, buttons arranged vertically */}
+
+      {/* place the text in a html element so it can styled */}
+
       <button name="answer1" value ={answer1} onClick={ ()=> this.buttonClick(answer1) } ></button> {answer1}
       {/* replace line breaks with CSS */}
       <br></br>
@@ -38,7 +42,7 @@ export default class Multiple extends Component {
       <button name="answer3" value ={answer3} onClick={ ()=> this.buttonClick(answer3) } ></button> {answer3}
       <br></br>
       <button name="answer4" value ={answer4} onClick={ ()=> this.buttonClick(answer4) } ></button> {answer4}
-    </>
+    </div>
     )
   }
 

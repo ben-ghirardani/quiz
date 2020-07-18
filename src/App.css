@@ -8,5 +8,8 @@ body, #root, html {
   text-align: center;
   height: 100%;
   width: 100%;
-  border: 3px solid red;
+  background-image: url("./components/images/Synthwave.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

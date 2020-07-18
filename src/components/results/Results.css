@@ -1,0 +1,12 @@
+.results {
+  color: white; 
+  border: 1px solid red;
+  border-radius: 7%;
+  width: 90vh;
+  height: 45vh;
+  position: absolute;
+  left: 50%;
+  top: 37%;
+  margin-left: -45vh;
+  margin-top: -22.5vh;
+}
