@@ -10,3 +10,10 @@
   margin-left: -45vh;
   margin-top: -22.5vh;
 }
+
+.answer {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  border: 1px solid black;
+}

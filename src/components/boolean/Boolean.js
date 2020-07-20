@@ -22,10 +22,10 @@ export default class Boolean extends Component {
     return(
       <div className="boolean">
         <p> {this.props.data.questionNumber} {this.props.data.question} </p>
-        <button name="True" value ="True" onClick={()=> this.buttonClick("True") } ></button> {"True"}
+        <button className="answer" value ="True" onClick={()=> this.buttonClick("True") } ></button> {"True"}
         {/* CSS should remove the need for a br tag */}
         <br></br>
-        <button name="False" value="False" onClick={()=> this.buttonClick("False") } ></button> {"False"}
+        <button className="answer" value="False" onClick={()=> this.buttonClick("False") } ></button> {"False"}
       </div>
     )
   }
