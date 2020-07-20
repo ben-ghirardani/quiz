@@ -1,12 +1,13 @@
 .landing-page {
   color: white;
   border: 1px solid red;
-  border-radius: 7%;
-  width: 90vh;
-  height: 45vh;
+  border-radius: 10px;
+  width: 110vh;
+  height: 40vh;
   position: absolute;
   left: 50%;
   top: 37%;
-  margin-left: -45vh;
+  margin-left: -55vh;
   margin-top: -22.5vh;
+  font-size: 10vh;
 }
