@@ -32,3 +32,7 @@ Bugs to solve -
 9) CSS code for the divs of landing page, category, length, etc is copied across all components. Create a wrapper for them to sit in?
 
 10) make the question component wider and shorter? Might look better on the page.
+
+
+11) change all buttons to a universal button with it's own styling
+12) change the container component for questions to be universal? Check how that works with Framer Motion animations?

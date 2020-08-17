@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Button.css';
 
 export default class Button extends Component {
 
@@ -9,6 +10,7 @@ export default class Button extends Component {
   render() {
     return(
       <button
+        className="button"
         disabled={this.props.disabled}
         name={this.props.name}
         value={this.props.value}

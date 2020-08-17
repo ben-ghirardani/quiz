@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Boolean.css';
+import Button from '../button/Button';
 
 export default class Boolean extends Component {
   
@@ -22,10 +23,12 @@ export default class Boolean extends Component {
     return(
       <div className="boolean">
         <p> {this.props.data.questionNumber} {this.props.data.question} </p>
-        <button className="answer" value ="True" onClick={()=> this.buttonClick("True") } ></button> {"True"}
+        <Button disabled={false} name={"True"} value={"True"} onClick={ ()=> this.buttonClick("True")} ></Button> {"True"}
+
         {/* CSS should remove the need for a br tag */}
         <br></br>
-        <button className="answer" value="False" onClick={()=> this.buttonClick("False") } ></button> {"False"}
+        
+        <Button disabled={false} name={"False"} value={"False"} onClick={ ()=> this.buttonClick("False")} ></Button> {"False"}
       </div>
     )
   }

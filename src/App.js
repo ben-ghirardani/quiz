@@ -167,7 +167,7 @@ class App extends Component {
       changeDisplay={this.changeDisplay}
     /> :
      this.state.display === "Category" ? <Category
-        label="Choose a category" 
+        label="Category" 
         categories={this.state.categories} 
         selectName={"categorySelect"} 
         getCategoryID={this.getCategoryID} 

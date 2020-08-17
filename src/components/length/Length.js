@@ -12,9 +12,8 @@ export default function length (props) {
         name={"Short"}
         value={"Short"}
         onClick={() => props.setLengthAndDisplay(10, "Quiz")}
-        buttonText={"Short"}
       />
-    }
+    } {"Short"}
     {/* 20 questions */}
     {
       <Button
@@ -22,9 +21,8 @@ export default function length (props) {
         name={"Medium"}
         value={"Medium"}
         onClick={() => props.setLengthAndDisplay(20, "Quiz")}
-        buttonText={"Medium"}
       />
-    }
+    } {"Medium"}
     {/* 30 questions */}
     {
       <Button
@@ -32,8 +30,7 @@ export default function length (props) {
         name={"Long"}
         value={"Long"}
         onClick={() => props.setLengthAndDisplay(30, "Quiz")}
-        buttonText={"Long"}
       />
-    }
+    } {"Long"}
   </div>
 }

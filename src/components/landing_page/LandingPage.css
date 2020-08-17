@@ -1,7 +1,9 @@
 .landing-page {
-  color: white;
-  border: 1px solid red;
-  border-radius: 10px;
+  text-align: center;
+  line-height: 40vh;
+  color: #C71585;
+  border: 5px solid #C71585;
+  border-radius: 30px;
   width: 110vh;
   height: 40vh;
   position: absolute;
