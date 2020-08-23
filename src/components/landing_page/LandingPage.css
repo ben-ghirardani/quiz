@@ -1,15 +1,16 @@
 .landing-page {
   text-align: center;
-  line-height: 40vh;
+  vertical-align: middle;
+  line-height: 60vh;
   color: #C71585;
   border: 5px solid #C71585;
   border-radius: 30px;
   width: 110vh;
-  height: 40vh;
+  height: 60vh;
   position: absolute;
   left: 50%;
   top: 37%;
   margin-left: -55vh;
-  margin-top: -22.5vh;
-  font-size: 10vh;
+  margin-top: -30vh;
+  font-size: 30vh;
 }

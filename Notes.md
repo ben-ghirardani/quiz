@@ -33,6 +33,18 @@ Bugs to solve -
 
 10) make the question component wider and shorter? Might look better on the page.
 
-
 11) change all buttons to a universal button with it's own styling
 12) change the container component for questions to be universal? Check how that works with Framer Motion animations?
+
+13) hide scrollbar but keep functionality?
+14) race conditions in <Category/> component. 
+15) change Loading to a spinning icon?
+
+
+***
+  16) can I dynamically check the length of the answers and set the position of the answers based on the longest?
+***
+
+Otherwise how to justify content towards the left
+
+header-box in <Multiple/> is overriding header-box in difficulty, need to consolidate

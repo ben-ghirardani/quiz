@@ -30,20 +30,17 @@ export default class Multiple extends Component {
     let answer4 = parseText(this.props.data.answers[3]);
 
     return(
-    // will need to make the container a proper component not a fragment in order to add Framer Motion stylings
     <div className="multiple">
-      <p> {questionNumber} {questionText} </p>
-      {/* have a circular button, with the text to the right, buttons arranged vertically */}
-
+      <div className="header-box">
+        <p> {questionNumber} {questionText} </p>
+      </div>
       {/* place the text in a html element so it can styled */}
-      <Button disabled={false} name={"answer1"} value={answer1} onClick={ ()=> this.buttonClick(answer1)} ></Button> {answer1}
-      {/* replace line breaks with CSS */}
-      <br></br>
-      <Button disabled={false} name={"answer2"} value={answer2} onClick={ ()=> this.buttonClick(answer2)} ></Button> {answer2}
-      <br></br>
-      <Button disabled={false} name={"answer3"} value={answer3} onClick={ ()=> this.buttonClick(answer3)} ></Button> {answer3}
-      <br></br>
-      <Button disabled={false} name={"answer4"} value={answer4} onClick={ ()=> this.buttonClick(answer4)} ></Button> {answer4}
+      <div className="body-box">
+        <Button disabled={false} name={"answer1"} value={answer1} onClick={ ()=> this.buttonClick(answer1)} ></Button> {answer1}
+        <Button disabled={false} name={"answer2"} value={answer2} onClick={ ()=> this.buttonClick(answer2)} ></Button> {answer2}
+        <Button disabled={false} name={"answer3"} value={answer3} onClick={ ()=> this.buttonClick(answer3)} ></Button> {answer3}
+        <Button disabled={false} name={"answer4"} value={answer4} onClick={ ()=> this.buttonClick(answer4)} ></Button> {answer4}
+      </div>
     </div>
     )
   }

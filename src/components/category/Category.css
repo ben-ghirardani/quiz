@@ -1,12 +1,16 @@
 .category {
-  color: white;
-  border: 1px solid red;
-  border-radius: 7%;
-  width: 90vh;
-  height: 45vh;
+  text-align: center;
+  line-height: 10vh;
+  color: #C71585;
+  border: 5px solid #C71585;
+  border-radius: 30px;
+  width: 110vh;
+  height: 60vh;
   position: absolute;
   left: 50%;
   top: 37%;
-  margin-left: -45vh;
-  margin-top: -22.5vh;
+  margin-left: -55vh;
+  margin-top: -30vh;
+  font-size: 4vh;
+  overflow: scroll;
 }

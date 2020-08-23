@@ -19,16 +19,18 @@ export default class Boolean extends Component {
     }
   }
 
+  // code for the question-box and answer-box is repeated across <Multiple/> and <Boolean/>
+
   render() {
     return(
       <div className="boolean">
-        <p> {this.props.data.questionNumber} {this.props.data.question} </p>
-        <Button disabled={false} name={"True"} value={"True"} onClick={ ()=> this.buttonClick("True")} ></Button> {"True"}
-
-        {/* CSS should remove the need for a br tag */}
-        <br></br>
-        
-        <Button disabled={false} name={"False"} value={"False"} onClick={ ()=> this.buttonClick("False")} ></Button> {"False"}
+        <div className="question-box">
+          <p> {this.props.data.questionNumber} {this.props.data.question} </p>
+        </div>
+        <div className="answer-box">
+          <Button disabled={false} name={"True"} value={"True"} onClick={ ()=> this.buttonClick("True")} ></Button> {"True"}        
+          <Button disabled={false} name={"False"} value={"False"} onClick={ ()=> this.buttonClick("False")} ></Button> {"False"}
+        </div>
       </div>
     )
   }
