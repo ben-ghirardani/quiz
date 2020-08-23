@@ -9,7 +9,7 @@ export default function difficulty (props) {
       {"Choose difficulty"}
     </div>
 
-    <div className="body-box">
+    <div className="difficulty-body">
       {
       <Button
         disabled={props.disableDifficultyButton("Easy")}
@@ -26,8 +26,9 @@ export default function difficulty (props) {
         name={"Medium"}
         value={"Medium"}
         onClick={() => props.setDifficultyAndDisplay("medium", "Length")}
+        buttonText={"Medium"}
       />
-    } {"Medium"}
+    } 
     <br></br>
     {
       <Button
@@ -35,8 +36,9 @@ export default function difficulty (props) {
         name={"Hard"}
         value={"Hard"}
         onClick={() => props.setDifficultyAndDisplay("hard", "Length")}
+        buttonText={"Hard"}
       />
-    } {"Hard"}
+    } 
     <br></br>
     {
       <Button
@@ -44,8 +46,9 @@ export default function difficulty (props) {
         name={"Random"}
         value={"Random"}
         onClick={() => props.setDifficultyAndDisplay("random", "Length")}
+        buttonText={"Random"}
       />
-    } {"Random"}
+    } 
     </div>
   
   </div>

@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import Item from '../item/Item';
+import Button from '../button/Button.js';
 import './Category.css';
 
 export default class Category extends Component {
 
   constructor(props) {
     super(props);
-    this.selectItem = this.selectItem.bind(this);
+    this.selectCategory = this.selectCategory.bind(this);
   }
 
-  selectItem(event) {
+  selectCategory(event) {
     let categoryID = this.props.getCategoryID(event.target.getAttribute('name'));
     this.props.getNumberOfQuestions(categoryID);
     this.props.changeDisplay("Difficulty");
@@ -18,10 +18,26 @@ export default class Category extends Component {
   render() {
     // race? this.props.categories is sometimes null
     // create a Promise to avoid race conditions?
-    const itemList = this.props.categories.map((category)=> <Item key={category.id} onClick={this.selectItem} name={category.name}/>)
+    const itemList = this.props.categories.map((category)=> 
+      <div key={category.id}>
+      <Button  
+        disabled={false} 
+        name={category.name} 
+        value={category.name} 
+        onClick={this.selectCategory} 
+        buttonText={category.name}
+      /> 
+      {/* <br></br> */}
+      </div>
+    )
     return(
       <div className="category" key={"ItemList"} >
-        {itemList}
+        <div className="category-header">
+          {"Choose a category"}
+        </div>
+        <div className="category-body">
+          {itemList}
+        </div>
       </div>
     )
   };

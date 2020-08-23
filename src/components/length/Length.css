@@ -1,3 +1,19 @@
+.length-header {
+  height: 25%;
+  border: 1px solid red;
+  text-align: center;
+  font-size: 6vh;
+}
+
+.length-body {
+  height: 75%;
+  border: 1px solid red;
+  width: 20%;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 3vh;
+}
+
 .length {
   text-align: center;
   line-height: 10vh;
