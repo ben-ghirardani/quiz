@@ -1,19 +1,22 @@
 /* center the text in the question-box */
-.header-box {
-  height: 25%;
-  border: 1px solid red;
+.multiple-header {
+  height: 18vh;
+  line-height: 18vh;
   text-align: center;
-  font-size: 3.5vh;
 }
 
-.body-box {
+.multiple-body {
   height: 75%;
-  border: 1px solid red;
+}
+
+.multiple-item {
+  display: flex;
+  flex-flow: row;
+  padding-top: 13px;
+  padding-bottom: 13px;
 }
 
 .multiple {
-  /* text-align: center; */
-  /* line-height: 10vh; */
   padding: 20px;
   color: #C71585;
   border: 5px solid #C71585;
@@ -25,5 +28,4 @@
   top: 37%;
   margin-left: -55vh;
   margin-top: -30vh;
-  /* font-size: 4vh; */
 }

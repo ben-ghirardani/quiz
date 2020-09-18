@@ -41,7 +41,6 @@ export default class GenerateQuestions extends Component {
     let questions = this.props.questions;
     let score = this.props.score;
     return(
-      // this.showQuestion(questions, index)
       <div>
         {index < questions.length ? this.showQuestion(questions, index) : <Results quizLength={questions.length} score={score} changeDisplay={this.props.changeDisplay}/>}
       </div>

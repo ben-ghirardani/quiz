@@ -9,6 +9,7 @@ body, #root, html {
   height: 100%;
   width: 100%;
   /* background-image: url("./components/images/Synthwave.jpg"); */
+  /* background css no longer needed as background is not a picture */
   background: #00041d;
   background-position: center;
   background-repeat: no-repeat;

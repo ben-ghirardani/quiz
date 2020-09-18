@@ -19,15 +19,20 @@ export default class Category extends Component {
     // race? this.props.categories is sometimes null
     // create a Promise to avoid race conditions?
     const itemList = this.props.categories.map((category)=> 
-      <div key={category.id}>
-      <Button  
-        disabled={false} 
-        name={category.name} 
-        value={category.name} 
-        onClick={this.selectCategory} 
-        buttonText={category.name}
-      /> 
-      {/* <br></br> */}
+      <div
+        className="category-item" 
+        key={category.id}
+      >
+        <Button  
+          disabled={false} 
+          name={category.name} 
+          value={category.name} 
+          onClick={this.selectCategory} 
+          buttonText=""
+        />
+        <p>
+          {category.name}
+        </p> 
       </div>
     )
     return(

@@ -1,7 +1,9 @@
 .button {
   border-radius: 50%;
-  height: 30px;
-  width: 30px;
+  /* height: 30px; */
+  /* width: 30px; */
+  height: 6vh;
+  width: 6vh;
   border: 1px solid white;
   background-color: #7D26CD;
 

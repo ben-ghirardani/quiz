@@ -1,21 +1,36 @@
 .category-header {
-  height: 25%;
-  border: 1px solid red;
+  height: 18vh;
+  line-height: 18vh;
   text-align: center;
-  font-size: 6vh;
+  font-size: 8vh;
 }
 
 .category-body {
-  height: 75%;
-  border: 1px solid red;
-  width: 70%;
+  /* border: 1px solid red; */
+  width: 68%;
   margin: 0 auto;
   text-align: left;
-  /* font-size: 2vh; */
 }
 
+p {
+  /* height to match button */
+  height: 6vh;
+  line-height: 6vh;
+  margin: 0;
+  padding-left: 2vh;
+  font-size: 1.5em;
+  color: #C71585;
+}
+
+.category-item {
+  display: flex;
+  flex-flow: row;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* does top aand margin-top conflict? */
 .category {
-  line-height: 10vh;
   color: #C71585;
   border: 5px solid #C71585;
   border-radius: 30px;
@@ -26,6 +41,16 @@
   top: 37%;
   margin-left: -55vh;
   margin-top: -30vh;
-  font-size: 4vh;
-  overflow: scroll;
+  /* font-size: 4vh; */
+  overflow-y: scroll;
+}
+
+
+.category::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome browsers */
+}
+
+.category {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;  /* mozilla */
 }

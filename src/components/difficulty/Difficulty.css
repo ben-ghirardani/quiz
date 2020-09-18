@@ -1,22 +1,25 @@
 .difficulty-header {
-  height: 25%;
-  border: 1px solid red;
+  height: 18vh;
+  line-height: 18vh;
   text-align: center;
-  font-size: 6vh;
+  font-size: 8vh;
 }
 
 .difficulty-body {
-  height: 75%;
-  border: 1px solid red;
-  width: 20%;
+  width: 40%;
   margin: 0 auto;
   text-align: left;
   font-size: 3vh;
-  /* overflow-x: visible; */
+}
+
+.difficulty-item {
+  display: flex;
+  flex-flow: row;
+  padding-top: 13px;
+  padding-bottom: 13px;
 }
 
 .difficulty {
-  /* text-align: left; */
   line-height: 10vh;
   color: #C71585;
   border: 5px solid #C71585;
@@ -28,5 +31,4 @@
   top: 37%;
   margin-left: -55vh;
   margin-top: -30vh;
-  /* font-size: 4vh; */
 }

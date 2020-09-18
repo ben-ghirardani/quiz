@@ -12,7 +12,6 @@ export default class Button extends Component {
         value={this.props.value}
         onClick={this.props.onClick}
       >
-        {this.props.buttonText}
       </button>
     )
   }
