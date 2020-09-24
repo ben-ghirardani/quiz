@@ -46,7 +46,7 @@ export default class Quiz extends Component {
             increaseArrayIndex={this.props.increaseArrayIndex}
             addToScore={this.props.addToScore}
             score={this.props.score}
-            changeDisplay={this.props.changeDisplay}
+            resetQuiz={this.props.resetQuiz}
           /> : 
           <Loading/>
         }

@@ -23,6 +23,7 @@ export default class Category extends Component {
         className="category-item" 
         key={category.id}
       >
+      <div className="button-item">  
         <Button  
           disabled={false} 
           name={category.name} 
@@ -30,6 +31,7 @@ export default class Category extends Component {
           onClick={this.selectCategory} 
           buttonText=""
         />
+      </div>
         <p>
           {category.name}
         </p> 

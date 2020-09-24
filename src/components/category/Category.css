@@ -6,27 +6,34 @@
 }
 
 .category-body {
-  /* border: 1px solid red; */
-  width: 68%;
+  width: 75%;
   margin: 0 auto;
   text-align: left;
 }
 
+.button-item {
+  order: 1;
+  height: 100%;
+  width: 5vh;
+  display: flex;
+}
+
 p {
+  order: 2;
   /* height to match button */
-  height: 6vh;
-  line-height: 6vh;
+  height: 5vh;
+  line-height: 5vh;
   margin: 0;
   padding-left: 2vh;
-  font-size: 1.5em;
+  align-self: center;
+  font-size: 5vh;
   color: #C71585;
 }
 
 .category-item {
   display: flex;
   flex-flow: row;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  height: 15vh;
 }
 
 /* does top aand margin-top conflict? */

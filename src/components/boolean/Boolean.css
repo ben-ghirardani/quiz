@@ -7,11 +7,12 @@
 .boolean-body {
   height: 75%;
   width: 30%;
-  /* border: 1px red solid; */
+  border: 1px red solid;
   margin: auto;
 }
 
 .boolean-item {
+  border: 1px solid red;
   display: flex;
   flex-flow: row;
   padding-top: 25px;

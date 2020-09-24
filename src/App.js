@@ -35,6 +35,7 @@ class App extends Component {
       this.addQuestions = this.addQuestions.bind(this);
       this.increaseArrayIndex = this.increaseArrayIndex.bind(this);
       this.addToScore = this.addToScore.bind(this);
+      this.resetQuiz = this.resetQuiz.bind(this);
   }
 
   componentDidMount() {
@@ -157,8 +158,18 @@ class App extends Component {
   addToScore() {
     let score = this.state.score;
     let newScore = score + 1;
-    this.setState({score: newScore})
-  }
+    this.setState({score: newScore});
+  };
+
+  resetQuiz() {
+    this.setState({display: "Category"});
+    this.setState({score: 0});
+    this.setState({difficulty: null})
+    this.setState({length: null})
+    this.setState({arrayIndex: 0});
+    this.setState({numQuestions: null});
+    this.setState({questions: null});
+  };
 
   render() {
     return(
@@ -192,7 +203,7 @@ class App extends Component {
         increaseArrayIndex={this.increaseArrayIndex}
         addToScore={this.addToScore}
         score={this.state.score}
-        changeDisplay={this.changeDisplay}
+        resetQuiz={this.resetQuiz}
      /> :
      <Loading/>
     }

@@ -1,13 +1,9 @@
 .button {
   border-radius: 50%;
-  /* height: 30px; */
-  /* width: 30px; */
-  height: 6vh;
-  width: 6vh;
+  height: 5vh;
+  width: 5vh;
   border: 1px solid white;
   background-color: #7D26CD;
-
   color: #C71585;
-  text-indent: 5vh;
-  font-size: 3vh;
+  align-self: center;
 }

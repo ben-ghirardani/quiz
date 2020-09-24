@@ -15,7 +15,7 @@ export default class GenerateQuestions extends Component {
     this.showQuestion = this.showQuestion.bind(this);
   }
 
-  // is it too fussy to creat an object and pass it to the question component, rather than it's contents directly as props?
+  // is it too fussy to create an object and pass it to the question component, rather than it's contents directly as props?
 
   showQuestion(array, index) {
     let question = array[index];
@@ -42,7 +42,7 @@ export default class GenerateQuestions extends Component {
     let score = this.props.score;
     return(
       <div>
-        {index < questions.length ? this.showQuestion(questions, index) : <Results quizLength={questions.length} score={score} changeDisplay={this.props.changeDisplay}/>}
+        {index < questions.length ? this.showQuestion(questions, index) : <Results quizLength={questions.length} score={score} resetQuiz={this.props.resetQuiz}/>}
       </div>
     )
   }

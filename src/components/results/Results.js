@@ -8,7 +8,7 @@ export default class Results extends Component {
     return(
       <div className="results">
         {`You scored ${this.props.score} out of ${this.props.quizLength}`}
-        <TryAgain changeDisplay={this.props.changeDisplay} />
+        <TryAgain resetQuiz={this.props.resetQuiz} />
       </div>
     )
   }

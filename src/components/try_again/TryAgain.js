@@ -8,7 +8,7 @@ export default class TryAgain extends Component {
   }
 
   clickButton() {
-    this.props.changeDisplay("Category")
+    this.props.resetQuiz();
   }
 
   render() {
