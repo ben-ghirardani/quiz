@@ -1,13 +1,14 @@
 import React from 'react';
 import Button from  '../button/Button';
+import Header from '../header/Header.js';
 import './Length.css';
 
 export default function length (props) {
   return <div className="length">
 
-    <div className="length-header">
-      {"Choose length"}
-    </div>
+    <Header
+      text={"Choose length"}
+    />
         
     <div className="length-body">
       

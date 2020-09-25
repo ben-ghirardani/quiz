@@ -32,6 +32,8 @@ export default class Boolean extends Component {
       <div className="boolean">
         <div 
           className="boolean-header"
+        // style takes precedence over css sheet
+        // adapts as question length is unknown
           style={{
             fontSize: stringLength
           }}

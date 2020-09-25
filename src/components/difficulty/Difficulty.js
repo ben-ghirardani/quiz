@@ -1,13 +1,15 @@
 import React from 'react';
 import Button from '../button/Button';
+import Header from '../header/Header.js';
 import './Difficulty.css';
 
 export default function difficulty (props) {
   return <div className="difficulty">
 
-    <div className="difficulty-header">
-      {"Choose difficulty"}
-    </div>
+
+    <Header
+      text={"Choose difficulty"}
+    />
 
     <div className="difficulty-body">
      

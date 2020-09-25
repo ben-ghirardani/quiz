@@ -3,6 +3,7 @@ import './Multiple.css';
 import parseText from '../parse_text/parseText';
 import checkStringLength from '../check_string_length/CheckStringLength'
 import Button from '../button/Button';
+import Header from '../header/Header.js';
 
 export default class Multiple extends Component {
 
@@ -34,16 +35,25 @@ export default class Multiple extends Component {
 
     return(
     <div className="multiple">
-      <div 
+      
+      <Header
+        text={questionText}
+        style={{
+          fontSize: stringLength
+        }}
+      />
+
+      {/* <div 
         className="multiple-header"
-        // takes precedence over css sheet
-        // use an inline style to programatically set font size
+        // style takes precedence over css sheet
+        // adapts as question length is unknown
         style={{
           fontSize: stringLength
         }}
       >
+
         <p> {questionNumber} {questionText} </p>
-      </div>
+      </div> */}
 
       <div className="multiple-body">
         

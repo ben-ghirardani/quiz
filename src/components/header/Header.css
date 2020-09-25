@@ -1,0 +1,8 @@
+.header {
+  height: 18vh;
+  line-height: 18vh;
+  text-align: center;
+  font-size: 8vh;
+  color: #C71585;
+  border: 1px solid red;
+}

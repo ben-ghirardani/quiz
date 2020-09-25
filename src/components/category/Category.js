@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from '../button/Button.js';
+import Header from '../header/Header.js'
 import './Category.css';
 
 export default class Category extends Component {
@@ -39,9 +40,11 @@ export default class Category extends Component {
     )
     return(
       <div className="category" key={"ItemList"} >
-        <div className="category-header">
-          {"Choose a category"}
-        </div>
+        
+        <Header
+          text={"Choose Category"}
+        />
+
         <div className="category-body">
           {itemList}
         </div>

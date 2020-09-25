@@ -27,6 +27,7 @@ Bugs to solve -
 6) Is there anything to stop the same question appearing more than once?
 7) folder naming convention - folders which are functions in camelCase? Folders which are classes CamelCase?
 
+***
 8) CSS code for the divs of landing page, category, length, etc is copied across all components. Create a wrapper for them to sit in?
 
 9) race conditions in <Category/> component. 
@@ -34,4 +35,4 @@ Bugs to solve -
 
 11) is it obvious that the user can scroll down in categories now that scroll is hidden?
 
-12) picking 'Try Again' for a second time does not reset the quiz. Is score being kept? Once difficulty, length, etc are picked it skips straight back to the 'Try Again' page.
+12) add same code to answers that checks length and changes font size accordingly?
