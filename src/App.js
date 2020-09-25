@@ -36,6 +36,7 @@ class App extends Component {
       this.increaseArrayIndex = this.increaseArrayIndex.bind(this);
       this.addToScore = this.addToScore.bind(this);
       this.resetQuiz = this.resetQuiz.bind(this);
+      this.clickLandingPage = this.clickLandingPage.bind(this);
   }
 
   componentDidMount() {
@@ -161,6 +162,12 @@ class App extends Component {
     this.setState({score: newScore});
   };
 
+  clickLandingPage() {
+    if(this.state.categories) {
+      this.changeDisplay("Category")
+    } else console.log("data not ready")
+  }
+
   resetQuiz() {
     this.setState({display: "Category"});
     this.setState({score: 0});
@@ -175,7 +182,8 @@ class App extends Component {
     return(
       <div className="App">
     {this.state.display === "LandingPage" ? <LandingPage
-      changeDisplay={this.changeDisplay}
+      categories={this.state.categories}
+      clickLandingPage={this.clickLandingPage}
     /> :
      this.state.display === "Category" ? <Category
         label="Category" 

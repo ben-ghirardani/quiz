@@ -3,6 +3,6 @@ import './Header.css';
 
 export default function header (props) {
   return <div className="header" style={props.style}>
-    {props.text}
+    {props.number} {props.text}
   </div>
 };

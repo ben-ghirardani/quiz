@@ -1,16 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import TryAgain from '../try_again/TryAgain.js'
 import './Results.css';
 
-export default class Results extends Component {
-
-  render() {
-    return(
-      <div className="results">
-        {`You scored ${this.props.score} out of ${this.props.quizLength}`}
-        <TryAgain resetQuiz={this.props.resetQuiz} />
-      </div>
-    )
-  }
-
+export default function results(props) {
+  return <div className="results">
+    {`You scored ${props.score} out of ${props.quizLength}`}
+    <TryAgain resetQuiz={props.resetQuiz} />
+  </div>
 }

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './Boolean.css';
 import Button from '../button/Button';
 import parseText from '../parse_text/parseText';
-import checkStringLength from '../check_string_length/CheckStringLength'
+import checkStringLength from '../check_string_length/CheckStringLength';
+import Header from '../header/Header.js';
 
 export default class Boolean extends Component {
   
@@ -25,21 +26,21 @@ export default class Boolean extends Component {
 
     let questionNumber = this.props.data.questionNumber;
     let questionText = parseText(this.props.data.question);
-    // checks length of question and returns a font size "multiple-header"
-    let stringLength = checkStringLength(questionText);
 
     return(
       <div className="boolean">
-        <div 
-          className="boolean-header"
+
+      <Header
+        number={questionNumber}
+        text={questionText}
         // style takes precedence over css sheet
         // adapts as question length is unknown
-          style={{
-            fontSize: stringLength
-          }}
-        >
-          <p> {questionNumber} {questionText} </p>
-        </div>
+        style={{
+          fontSize: checkStringLength("question", questionText),
+          lineHeight: "4.5vh"
+        }}
+      /> 
+
         <div className="boolean-body">
 
           <div className="boolean-item">

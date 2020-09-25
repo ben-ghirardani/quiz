@@ -29,7 +29,7 @@ p {
   height: 15vh;
 }
 
-/* does top aand margin-top conflict? */
+/* does top and margin-top conflict? */
 .category {
   color: #C71585;
   border: 5px solid #C71585;
@@ -41,7 +41,6 @@ p {
   top: 37%;
   margin-left: -55vh;
   margin-top: -30vh;
-  /* font-size: 4vh; */
   overflow-y: scroll;
 }
 

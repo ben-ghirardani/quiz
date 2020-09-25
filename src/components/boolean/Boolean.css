@@ -1,23 +1,15 @@
-.boolean-header {
-  height: 18vh;
-  line-height: 18vh;
-  text-align: center;
-  font-size: 8vh;
-}
-
 .boolean-body {
   height: 75%;
   width: 30%;
-  border: 1px red solid;
   margin: auto;
 }
 
 .boolean-item {
-  border: 1px solid red;
   display: flex;
   flex-flow: row;
   padding-top: 25px;
   padding-bottom: 25px;
+  overflow-wrap: break-word;
 }
 
 .boolean {
@@ -33,19 +25,3 @@
   margin-left: -55vh;
   margin-top: -30vh;
 }
-
-/* .boolean {
-  text-align: center;
-  line-height: 10vh;
-  color: #C71585;
-  border: 5px solid #C71585;
-  border-radius: 30px;
-  width: 110vh;
-  height: 60vh;
-  position: absolute;
-  left: 50%;
-  top: 37%;
-  margin-left: -55vh;
-  margin-top: -30vh;
-  font-size: 4vh; */
-/* } */

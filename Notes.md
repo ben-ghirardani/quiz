@@ -15,9 +15,8 @@ When button is clicked, have it stay highlighted.
 
 Bugs to solve - 
 
-0) Tidy up code! Check indentation on every page, etc.
+1) Tidy up code! Check indentation on every page, etc.
 
-1) add error handling to reset back to category screen? Maybe not. Clutters up screen.
 2) Re-factor the ternery in the render method of <Quiz/>, too long 
 3) Is score updating quickly enough? Include promise to make sure it's being captured before moving to next screen?
 4) HTML character encoding - apostrophes and quotation marks interpreted incorrectly.
@@ -30,9 +29,12 @@ Bugs to solve -
 ***
 8) CSS code for the divs of landing page, category, length, etc is copied across all components. Create a wrapper for them to sit in?
 
-9) race conditions in <Category/> component. 
-10) change Loading to a spinning icon?
 
-11) is it obvious that the user can scroll down in categories now that scroll is hidden?
+9) change Loading to a spinning icon?
 
-12) add same code to answers that checks length and changes font size accordingly?
+10) is it obvious that the user can scroll down in categories now that scroll is hidden?
+
+11) is DropDown used anymore? Check then get rid.
+12) is Item used anymore? Check then get rid.
+12) is MainContainer used anymore? Check then get rid. Or implement correctly.
+13) check for any non-visual components that have css files and delete.

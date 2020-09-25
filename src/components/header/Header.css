@@ -4,5 +4,5 @@
   text-align: center;
   font-size: 8vh;
   color: #C71585;
-  border: 1px solid red;
+  overflow-wrap: break-word;
 }

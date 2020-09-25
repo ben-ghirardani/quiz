@@ -1,21 +1,13 @@
-/* center the text in the question-box */
-.multiple-header {
-  height: 18vh;
-  line-height: 18vh;
-  text-align: center;
-  font-size: 8vh;
-}
-
 .multiple-body {
   height: 75%;
 }
 
 .multiple-item {
-  border: 1px solid red;
   display: flex;
   flex-flow: row;
   padding-top: 13px;
   padding-bottom: 13px;
+  overflow-wrap: break-word;
 }
 
 .multiple {
