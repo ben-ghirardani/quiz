@@ -34,7 +34,5 @@ Bugs to solve -
 
 10) is it obvious that the user can scroll down in categories now that scroll is hidden?
 
-11) is DropDown used anymore? Check then get rid.
 12) is Item used anymore? Check then get rid.
 12) is MainContainer used anymore? Check then get rid. Or implement correctly.
-13) check for any non-visual components that have css files and delete.
