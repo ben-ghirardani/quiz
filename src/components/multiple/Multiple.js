@@ -51,7 +51,7 @@ export default class Multiple extends Component {
           <Button disabled={false} name={"answer1"} value={answer1} onClick={ ()=> this.buttonClick(answer1)} ></Button>
           <p
             style={{fontSize: checkStringLength("answer", answer1)}}
-          >{answer1}</p>
+          >{answer1}</p> 
         </div>
 
         <div className="multiple-item">

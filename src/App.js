@@ -43,12 +43,10 @@ class App extends Component {
     this.getCategories()
   };
 
-  // refactor this not to move straight to category, logic in LandingPage to make sure data has been fetched? Or 
-  // just Allow the initial animation to complete, giving enough time for fetch.
+  // function clickLandingPage prevents progress before data is ready, add an animtion to hide the fact
   getCategories() {
     fetch('https://opentdb.com/api_category.php')
       .then(response => response.json())
-      // .then(data => this.setState({categories: data.trivia_categories, display: "Category"}))
       .then(data => this.setState({categories: data.trivia_categories}))
       .catch(error => console.log(error.message));
   };
@@ -76,7 +74,7 @@ class App extends Component {
     this.setState({numQuestions: data})
   }
 
-  // function to combine setDifficulty and changeDisplay for difficulty buttons
+  // combine setDifficulty and changeDisplay for difficulty buttons
   setDifficultyAndDisplay(difficulty, display) {
     this.setDifficulty(difficulty);
     this.changeDisplay(display);

@@ -1,55 +1,120 @@
-.category-body {
-  width: 75%;
-  margin: 0 auto;
-  text-align: left;
+/* large screen */
+
+/* screen size is actually 930? */
+
+@media screen and (min-width: 930px) {
+  .category-body {
+    width: 75%;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .category-item {
+    display: flex;
+    flex-flow: row;
+    height: 15vh;
+  }
+
+  .button-item {
+    order: 1;
+    height: 100%;
+    width: 5vh;
+    display: flex;
+  }
+
+  p {
+    order: 2;
+    /* height to match button */
+    height: 5vh;
+    line-height: 5vh;
+    margin: 0;
+    padding-left: 2vh;
+    align-self: center;
+    font-size: 5vh;
+    color: #C71585;
+  }
+
+  /* does top and margin-top conflict? */
+  .category {
+    color: #C71585;
+    border: 5px solid #C71585;
+    border-radius: 30px;
+    width: 110vh;
+    height: 60vh;
+    position: absolute;
+    left: 50%;
+    top: 37%;
+    margin-left: -55vh;
+    margin-top: -30vh;
+    overflow-y: scroll;
+  }
+
+
+  /* hide the scroll bars */
+  .category::-webkit-scrollbar {
+      display: none;  /* Safari and Chrome browsers */
+  }
+
+  .category {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none;  /* mozilla */
+  }
 }
 
-.button-item {
-  order: 1;
-  height: 100%;
-  width: 5vh;
-  display: flex;
-}
-
-p {
-  order: 2;
-  /* height to match button */
-  height: 5vh;
-  line-height: 5vh;
-  margin: 0;
-  padding-left: 2vh;
-  align-self: center;
-  font-size: 5vh;
-  color: #C71585;
-}
-
-.category-item {
-  display: flex;
-  flex-flow: row;
-  height: 15vh;
-}
-
-/* does top and margin-top conflict? */
-.category {
-  color: #C71585;
-  border: 5px solid #C71585;
-  border-radius: 30px;
-  width: 110vh;
-  height: 60vh;
-  position: absolute;
-  left: 50%;
-  top: 37%;
-  margin-left: -55vh;
-  margin-top: -30vh;
-  overflow-y: scroll;
-}
+/* mobile screen */
+@media screen and (max-width: 929px) {
+  .category {
+    color: #C71585;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow-y: scroll;
+  }
 
 
-.category::-webkit-scrollbar {
+  /* hide the scroll bars */
+  .category::-webkit-scrollbar {
     display: none;  /* Safari and Chrome browsers */
-}
+  }
 
-.category {
+  .category {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none;  /* mozilla */
+  }
+
+  .category-body {
+    width: 100vw;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .category-item {
+    display: flex;
+    flex-flow: row;
+    height: 10vh;
+    border: 1px solid red;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  }
+
+  .button-item {
+    order: 1;
+    height: 100%;
+    width: 15%;
+    display: flex;
+    border: 1px dotted green;
+    padding-left: 2%;
+    
+  }
+
+  p {
+    order: 2;
+    height: 100%;
+    width: 85%;
+    margin: 0;
+    padding-left: 1vh;
+    align-self: left;
+    font-size: 4ch;
+    color: #C71585;
+  }
 }

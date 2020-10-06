@@ -17,8 +17,6 @@ export default class Category extends Component {
   };
 
   render() {
-    // race? this.props.categories is sometimes null
-    // create a Promise to avoid race conditions?
     const itemList = this.props.categories.map((category)=> 
       <div
         className="category-item" 
@@ -30,7 +28,6 @@ export default class Category extends Component {
           name={category.name} 
           value={category.name} 
           onClick={this.selectCategory} 
-          buttonText=""
         />
       </div>
         <p>

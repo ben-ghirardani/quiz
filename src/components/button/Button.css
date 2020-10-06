@@ -2,8 +2,7 @@
   border-radius: 50%;
   height: 5vh;
   width: 5vh;
-  border: 1px solid white;
-  background-color: #7D26CD;
-  color: #C71585;
+  border: 5px solid #C71585;
+  background-color: #00041d;
   align-self: center;
 }
