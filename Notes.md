@@ -23,3 +23,14 @@ Bugs to solve -
 9) change Loading to a spinning icon?
 10) is it obvious that the user can scroll down in categories now that scroll is hidden?
 11) add an animation to Landing Page to hide the fact that it waits for data to fetch.
+
+
+0) the whole border around the components is pointless and cause unnecessary problems...
+  * should also make it easier to share the display component across other components
+  check the min / max of all components
+  check mobile settings now that main has changed
+
+  Why is there a scroll on screens that should be the size of the screen? should not be any scroll.
+
+
+  12) do the functions count as Components? Should they in another folder?

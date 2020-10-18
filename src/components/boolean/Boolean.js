@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import './Boolean.css';
 import Button from '../button/Button';
-import parseText from '../parse_text/parseText';
+import parseText from '../parse_text/parseText.js';
 import checkStringLength from '../check_string_length/CheckStringLength';
 import Header from '../header/Header.js';
+import setFontSize from '../set_font_size/SetFontSize.js'
 
 export default class Boolean extends Component {
   
   constructor(props) {
     super(props);
-    this.clickNext = this.buttonClick.bind(this);
+    this.buttonClick = this.buttonClick.bind(this);
   }
 
   buttonClick(answer) {
@@ -36,7 +37,7 @@ export default class Boolean extends Component {
         // style takes precedence over css sheet
         // adapts as question length is unknown
         style={{
-          fontSize: checkStringLength("question", questionText),
+          fontSize: setFontSize(checkStringLength(questionText)),
           lineHeight: "4.5vh"
         }}
       /> 

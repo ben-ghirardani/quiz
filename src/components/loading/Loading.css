@@ -3,14 +3,8 @@
   vertical-align: middle;
   line-height: 60vh;
   color: #C71585;
-  border: 5px solid #C71585;
-  border-radius: 30px;
-  width: 110vh;
-  height: 60vh;
+  width: 100%;
+  height: 100%;
   position: absolute;
-  left: 50%;
-  top: 37%;
-  margin-left: -55vh;
-  margin-top: -30vh;
   font-size: 10vh;
 }
