@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Button from '../button/Button.js';
+// import Button from '../button/Button.js';
 import Header from '../header/Header.js'
 import './Category.css';
 
@@ -21,16 +21,20 @@ export default class Category extends Component {
       <div
         className="category-item" 
         key={category.id}
+        name={category.name}
+        onClick={this.selectCategory}
       >
-      <div className="button-item">  
+      {/* <div className="button-item">  
         <Button  
           disabled={false} 
           name={category.name} 
           value={category.name} 
           onClick={this.selectCategory} 
         />
-      </div>
-        <p>
+      </div> */}
+        <p
+          name={category.name}
+        >
           {category.name}
         </p> 
       </div>

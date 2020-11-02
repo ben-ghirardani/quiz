@@ -6,8 +6,8 @@
 .multiple-item {
   display: flex;
   flex-flow: row;
-  padding-top: 13px;
-  padding-bottom: 13px;
+  padding-top: 5%;
+  padding-bottom: 5%;
   overflow-wrap: break-word;
 }
 

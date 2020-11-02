@@ -2,13 +2,15 @@
 body, #root, html {
   height: 100%;
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .App {
   text-align: center;
   height: 100%;
   width: 100%;
-  background: #00041d;
+  background: antiquewhite;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

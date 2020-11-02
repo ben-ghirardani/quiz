@@ -3,7 +3,7 @@ import './Multiple.css';
 import parseText from '../parse_text/parseText';
 import checkStringLength from '../check_string_length/CheckStringLength'
 import setFontSize from '../set_font_size/SetFontSize.js'
-import Button from '../button/Button';
+// import Button from '../button/Button';
 import Header from '../header/Header.js';
 
 export default class Multiple extends Component {
@@ -32,7 +32,7 @@ export default class Multiple extends Component {
     if (large.length > 0) {
       return "100%"
     } else if (medium.length > 0) {
-      return "75%"
+      return "65%"
       // default to small
     } else return "50%"
   }
@@ -68,23 +68,31 @@ export default class Multiple extends Component {
       >
         
         <div className="multiple-item">
-          <Button disabled={false} name={"answer1"} value={answer1} onClick={ ()=> this.buttonClick(answer1)} ></Button>
-          <p>{answer1}</p> 
+          {/* <Button disabled={false} name={"answer1"} value={answer1} onClick={ ()=> this.buttonClick(answer1)} ></Button> */}
+          <p
+            onClick={ ()=> this.buttonClick(answer1)}
+          >{answer1}</p> 
         </div>
 
         <div className="multiple-item">
-          <Button disabled={false} name={"answer2"} value={answer2} onClick={ ()=> this.buttonClick(answer2)} ></Button>
-          <p>{answer2}</p>
+          {/* <Button disabled={false} name={"answer2"} value={answer2} onClick={ ()=> this.buttonClick(answer2)} ></Button> */}
+          <p
+            onClick={ ()=> this.buttonClick(answer2)}
+          >{answer2}</p>
         </div>
 
         <div className="multiple-item">
-          <Button disabled={false} name={"answer3"} value={answer3} onClick={ ()=> this.buttonClick(answer3)} ></Button>
-          <p>{answer3}</p>
+          {/* <Button disabled={false} name={"answer3"} value={answer3} onClick={ ()=> this.buttonClick(answer3)} ></Button> */}
+          <p
+            onClick={ ()=> this.buttonClick(answer3)}
+          >{answer3}</p>
         </div>
 
         <div className="multiple-item">
-          <Button disabled={false} name={"answer4"} value={answer4} onClick={ ()=> this.buttonClick(answer4)} ></Button>
-          <p>{answer4}</p>
+          {/* <Button disabled={false} name={"answer4"} value={answer4} onClick={ ()=> this.buttonClick(answer4)} ></Button> */}
+          <p
+            onClick={ ()=> this.buttonClick(answer4)}
+          >{answer4}</p>
         </div>
          
       </div>

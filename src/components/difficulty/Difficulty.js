@@ -14,13 +14,15 @@ export default function difficulty (props) {
     <div className="difficulty-body">
      
       <div className="difficulty-item">
-        <Button
+        {/* <Button
           disabled={props.disableDifficultyButton("Easy")}
           name={"Easy"}
           value={"Easy"}
           onClick={() => props.setDifficultyAndDisplay("easy", "Length")}
-        />
-        <p>
+        /> */}
+        <p
+          onClick={() => props.setDifficultyAndDisplay("easy", "Length")}
+        >
           Easy
         </p>
       </div>

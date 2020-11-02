@@ -1,21 +1,51 @@
-.difficulty-body {
-  width: 40%;
-  margin: 0 auto;
-  text-align: left;
-  font-size: 3vh;
+@media screen and (min-width: 930px) {
+
+  .difficulty-body {
+    width: 40%;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 3vh;
+  }
+
+  .difficulty-item {
+    display: flex;
+    flex-flow: row;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  }
+
+  .difficulty {
+    line-height: 10vh;
+    color: #C71585;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+
 }
 
-.difficulty-item {
-  display: flex;
-  flex-flow: row;
-  padding-top: 13px;
-  padding-bottom: 13px;
-}
+@media screen and (max-width: 929px) {
 
-.difficulty {
-  line-height: 10vh;
-  color: #C71585;
-  width: 100%;
-  height: 100%;
-  position: absolute;
+  .difficulty-body {
+    width: 60%;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 3vh;
+  }
+
+  .difficulty-item {
+    display: flex;
+    flex-flow: row;
+    height: 15vh;
+    padding-left: 5vh;
+  }
+
+  .difficulty {
+    line-height: 10vh;
+    color: #C71585;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+
 }

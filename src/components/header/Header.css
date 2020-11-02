@@ -1,22 +1,29 @@
 @media screen and (min-width: 760px) {
   .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     height: 18vh;
     line-height: 18vh;
-    text-align: center;
     font-size: 8vh;
-    color: #C71585;
+    color: darkslategray;
+    width: 100%;
     overflow-wrap: break-word;
   }
 }
 
 @media screen and (max-width: 759px) {
   .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     height: 18vh;
     line-height: 18vh;
-    text-align: center;
     font-size: 5vh;
-    color: #C71585;
+    color: darkslategray;
+    width: 100%;
     overflow-wrap: break-word;
-    border: 5px dotted blue;
   }
 }
