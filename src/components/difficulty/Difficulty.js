@@ -1,11 +1,15 @@
 import React from 'react';
-import Button from '../button/Button';
 import Header from '../header/Header.js';
 import './Difficulty.css';
 
 export default function difficulty (props) {
-  return <div className="difficulty">
 
+  const easy = props.disableDifficulty("Easy");
+  const medium = props.disableDifficulty("Medium");
+  const hard = props.disableDifficulty("Hard");
+  const random = props.disableDifficulty("Random");
+
+  return <div className="difficulty">
 
     <Header
       text={"Choose difficulty"}
@@ -14,55 +18,28 @@ export default function difficulty (props) {
     <div className="difficulty-body">
      
       <div className="difficulty-item">
-        {/* <Button
-          disabled={props.disableDifficultyButton("Easy")}
-          name={"Easy"}
-          value={"Easy"}
-          onClick={() => props.setDifficultyAndDisplay("easy", "Length")}
-        /> */}
-        <p
-          onClick={() => props.setDifficultyAndDisplay("easy", "Length")}
-        >
+        <p onClick={() => easy === false ? props.setDifficultyAndDisplay("easy", "Length") : null } >
           Easy
         </p>
       </div>
 
       <div className="difficulty-item">
-        <Button
-          disabled={props.disableDifficultyButton("Medium")}
-          name={"Medium"}
-          value={"Medium"}
-          onClick={() => props.setDifficultyAndDisplay("medium", "Length")}
-        />
-        <p>
+        <p onClick={() => medium === false ? props.setDifficultyAndDisplay("medium", "Length") : null } >
           Medium
         </p>
       </div>
 
       <div className="difficulty-item">
-        <Button
-          disabled={props.disableDifficultyButton("Hard")}
-          name={"Hard"}
-          value={"Hard"}
-          onClick={() => props.setDifficultyAndDisplay("hard", "Length")}
-        />
-        <p>
+        <p onClick={() => hard === false ? props.setDifficultyAndDisplay("hard", "Length") : null } >
           Hard
         </p>
       </div>
       
       <div className="difficulty-item">
-        <Button
-          disabled={props.disableDifficultyButton("Random")}
-          name={"Random"}
-          value={"Random"}
-          onClick={() => props.setDifficultyAndDisplay("random", "Length")}
-        />
-        <p>
+        <p onClick={() => random === false ? props.setDifficultyAndDisplay("random", "Length") : null } >
           Random
         </p>
       </div>
-    
      
     </div>
   

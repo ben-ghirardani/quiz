@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import Button from '../button/Button.js';
 import Header from '../header/Header.js'
 import './Category.css';
 
@@ -24,14 +23,6 @@ export default class Category extends Component {
         name={category.name}
         onClick={this.selectCategory}
       >
-      {/* <div className="button-item">  
-        <Button  
-          disabled={false} 
-          name={category.name} 
-          value={category.name} 
-          onClick={this.selectCategory} 
-        />
-      </div> */}
         <p
           name={category.name}
         >

@@ -22,9 +22,4 @@ Bugs to solve -
 
 *** possible to create an animation effect that pulses colour to show that something is an option to click?
 
-7) change onClick from just button to the whole containing component, button and text.
-
-
 9) disabled buttons are displaying normally, need to differentiate
-
-10) remove Button completely?!

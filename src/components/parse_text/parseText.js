@@ -9,6 +9,8 @@ export default function parseText(text) {
   const rightSingleQuote = /&rsquo;/g;
   const horizontalEllipsis = /&hellip;/g;
   const rightDoubleQuote = /&rdquo;/g;
-  let edit = text.replace(quote, '"').replace(apostrophe, '\'').replace(ampersand, '&').replace(lrm, '').replace(shy, '').replace(acuteo, 'ó').replace(leftDoubleQuote, '“').replace(rightSingleQuote, '’').replace(horizontalEllipsis, '…').replace(rightDoubleQuote, '”');
+  const eAcute = /&Eacute;/g;
+
+  let edit = text.replace(quote, '"').replace(apostrophe, '\'').replace(ampersand, '&').replace(lrm, '').replace(shy, '').replace(acuteo, 'ó').replace(leftDoubleQuote, '“').replace(rightSingleQuote, '’').replace(horizontalEllipsis, '…').replace(rightDoubleQuote, '”').replace(eAcute, 'É');
   return edit;
 }

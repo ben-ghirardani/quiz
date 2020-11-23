@@ -25,8 +25,8 @@ class App extends Component {
       this.getCategories = this.getCategories.bind(this);
       this.getCategoryID = this.getCategoryID.bind(this);
       this.getNumberOfQuestions = this.getNumberOfQuestions.bind(this);
-      this.disableLengthButton = this.disableLengthButton.bind(this);
-      this.disableDifficultyButton = this.disableDifficultyButton.bind(this);
+      this.disableLength = this.disableLength.bind(this);
+      this.disableDifficulty = this.disableDifficulty.bind(this);
       this.setDifficulty = this.setDifficulty.bind(this);
       this.changeDisplay = this.changeDisplay.bind(this);
       this.setDifficultyAndDisplay = this.setDifficultyAndDisplay.bind(this);
@@ -97,10 +97,10 @@ class App extends Component {
     this.setState({display: value})
   }
 
-  // returns boolean to apply to 'disable' property of <Button/>
-  disableDifficultyButton(difficulty) {
 
-    let buttonState;
+  disableDifficulty(difficulty) {
+
+    let disabled;
     let easyLength;
     let mediumLength;
     let hardLength;
@@ -113,35 +113,39 @@ class App extends Component {
       randomLength = this.state.numQuestions.category_question_count.total_question_count;
 
       if(difficulty === "Easy" && easyLength < 10) {
-        buttonState = true
+        disabled = true
       } else if (difficulty === "Medium" && mediumLength < 10) {
-        buttonState = true
+        disabled = true
       } else if (difficulty === "Hard" && hardLength < 10) {
-        buttonState = true
+        disabled = true
       } else if (difficulty === "Random" && randomLength < 10) {
-        buttonState = true
-      } else buttonState = false
-    } else buttonState = true;
-    return buttonState;
+        disabled = true
+      } else disabled = false
+
+    } else disabled = true;
+    
+    return disabled;
   }; 
 
 
-  disableLengthButton(length) {
-    if(!this.state.difficulty) {
-      return true
-    } else if ( 
+  disableLength(length) {
+    if ( 
       this.state.difficulty === "easy" && this.state.numQuestions.category_question_count.total_easy_question_count < length
-    ) {return true} 
-      else if ( 
+    ) {return true}
+
+    else if ( 
       this.state.difficulty === "medium" && this.state.numQuestions.category_question_count.total_medium_question_count < length
-    ) {return true} 
-      else if (
+    ) {return true}
+
+    else if (
       this.state.difficulty === "hard" && this.state.numQuestions.category_question_count.total_hard_question_count < length
-    ) {return true} 
-      else if (
+    ) {return true}
+
+    else if (
       this.state.difficulty === "random" && this.state.numQuestions.category_question_count.total_question_count < length
     ) {return true}
-    return false
+
+    else return false
   };
 
   addQuestions(data) {
@@ -192,11 +196,11 @@ class App extends Component {
         changeDisplay={this.changeDisplay}
      /> : 
      this.state.display === "Difficulty" ? <Difficulty
-        disableDifficultyButton={this.disableDifficultyButton}
+        disableDifficulty={this.disableDifficulty}
         setDifficultyAndDisplay={this.setDifficultyAndDisplay}
      /> :
      this.state.display === "Length" ? <Length
-        disableLengthButton={this.disableLengthButton}
+        disableLength={this.disableLength}
         setLengthAndDisplay={this.setLengthAndDisplay}
      /> :
      this.state.display === "Quiz" ? <Quiz

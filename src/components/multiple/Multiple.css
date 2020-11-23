@@ -6,13 +6,13 @@
 .multiple-item {
   display: flex;
   flex-flow: row;
-  padding-top: 5%;
-  padding-bottom: 5%;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
   overflow-wrap: break-word;
 }
 
 .multiple {
-  color: #C71585;
+  color: darkslategray;
   width: 100%;
   height: 100%;
   position: absolute;

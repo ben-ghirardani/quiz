@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Boolean.css';
-import Button from '../button/Button';
 import parseText from '../parse_text/parseText.js';
 import checkStringLength from '../check_string_length/CheckStringLength';
 import Header from '../header/Header.js';
@@ -45,13 +44,15 @@ export default class Boolean extends Component {
         <div className="boolean-body">
 
           <div className="boolean-item">
-            <Button disabled={false} name={"True"} value={"True"} onClick={ ()=> this.buttonClick("True")} ></Button>
-            <p>True</p>        
+            <p onClick={ ()=> this.buttonClick("True")}>
+              True
+            </p>        
           </div>
 
           <div className="boolean-item">
-            <Button disabled={false} name={"False"} value={"False"} onClick={ ()=> this.buttonClick("False")} ></Button>
-            <p>False</p>        
+            <p onClick={ ()=> this.buttonClick("False")} >
+              False
+            </p>        
           </div>
 
         </div>

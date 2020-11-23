@@ -1,3 +1,5 @@
+// fisher yates shuffle is an established algorithm and so is not tested here 
+
 export default function fisherYatesShuffle(array) {
   
   let m = array.length, t, i;

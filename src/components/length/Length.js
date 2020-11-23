@@ -1,9 +1,13 @@
 import React from 'react';
-// import Button from  '../button/Button';
 import Header from '../header/Header.js';
 import './Length.css';
 
 export default function length (props) {
+
+  const short = props.disableLength(10);
+  const medium = props.disableLength(20);
+  const long = props.disableLength(30);
+
   return <div className="length">
 
     <Header
@@ -14,14 +18,12 @@ export default function length (props) {
       
       {/* 10 questions */}
       <div className="length-item">
-        {/* <Button
-          disabled={props.disableLengthButton(10)}
-          name={"Short"}
-          value={"Short"}
-          onClick={() => props.setLengthAndDisplay(10, "Quiz")}
-        /> */}
         <p
-          onClick={() => props.setLengthAndDisplay(10, "Quiz")}
+          // replace null option in ternery with error handling
+          onClick={() => short === false ? props.setLengthAndDisplay(10, "Quiz") : null } 
+          style={{
+            opacity: short === false ? 1 : 0.5
+          }}
         >
           Short
         </p>
@@ -29,14 +31,11 @@ export default function length (props) {
       
       {/* 20 questions */}
       <div className="length-item">
-        {/* <Button
-          disabled={props.disableLengthButton(20)}
-          name={"Medium"}
-          value={"Medium"}
-          onClick={() => props.setLengthAndDisplay(20, "Quiz")}
-        /> */}
         <p
-          onClick={() => props.setLengthAndDisplay(20, "Quiz")}
+          onClick={() => medium === false ? props.setLengthAndDisplay(20, "Quiz") : null }
+          style={{
+            opacity: medium === false ? 1 : 0.5
+          }}
         >
           Medium
         </p>
@@ -44,14 +43,11 @@ export default function length (props) {
 
       {/* 30 questions */}
       <div className="length-item">
-        {/* <Button
-          disabled={props.disableLengthButton(30)}
-          name={"Long"}
-          value={"Long"}
-          onClick={() => props.setLengthAndDisplay(30, "Quiz")}
-        /> */}
         <p
-          onClick={() => props.setLengthAndDisplay(30, "Quiz")}
+          onClick={() => long === false ? props.setLengthAndDisplay(30, "Quiz") : null }
+          style={{
+            opacity: long === false ? 1 : 0.5
+          }}
         >
           Long
         </p>
