@@ -2,13 +2,12 @@ import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import Header from './Header';
 
-// check that it renders
-// check that it displays props correctly
-
-// define 'props' at the top of the test, and pass them to the test version
-
-const props = {
-  style: "blue",
-  number: 3,
-  text: "Test Header"
-}
+test("header should render with the style props it is passed", ()=>{
+  const {getByTestId, getByText} = render(
+    <Header 
+      number={"1"}
+      text={"Test Header"}
+    />);
+  expect(getByTestId('header')).toBeInTheDocument();
+  expect(getByText("1 Test Header")).toBeVisible();
+});

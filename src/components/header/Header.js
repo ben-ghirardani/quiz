@@ -1,8 +1,8 @@
 import React from 'react'
 import './Header.css';
 
-export default function header (props) {
-  return <div className="header" style={props.style}>
+export default function Header (props) {
+  return <div data-testid="header" className="header" style={props.style}>
     {props.number} {props.text}
   </div>
 };

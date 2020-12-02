@@ -3,10 +3,6 @@ import Boolean from '../boolean/Boolean.js';
 import Multiple from  '../multiple/Multiple.js';
 import Results from '../results/Results.js';
 
-// ***
-// *** can this be a functional component, add the questions to an array in state, create a class to display questions one by one
-// ***
-
 // class receives the array of questions
 export default class GenerateQuestions extends Component {
 

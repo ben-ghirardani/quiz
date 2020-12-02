@@ -22,4 +22,4 @@ Bugs to solve -
 
 *** possible to create an animation effect that pulses colour to show that something is an option to click?
 
-9) disabled buttons are displaying normally, need to differentiate
+super(props) deprecated? Look into this.
