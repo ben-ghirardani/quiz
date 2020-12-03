@@ -1,8 +1,8 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import {render} from '@testing-library/react';
 import Header from './Header';
 
-test("header should render with the style props it is passed", ()=>{
+test("header should render with the props it is passed", ()=>{
   const {getByTestId, getByText} = render(
     <Header 
       number={"1"}
