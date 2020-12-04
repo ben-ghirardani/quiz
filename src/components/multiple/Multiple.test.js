@@ -1,8 +1,5 @@
 import React from 'react';
 import Multiple from './Multiple';
-// import parseText from '../parse_text/parseText';
-// import checkStringLength from '../check_string_length/CheckStringLength'
-// import setFontSize from '../set_font_size/SetFontSize.js'
 import {render, screen} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -62,4 +59,34 @@ describe("setComponentWidth dynamically alters the width of the component based 
 
 });
 
-  
+  describe("onClick sorts between correct and incorrect answers", ()=>{
+
+    test("clicking the wrong answer does not increase the score", ()=>{
+      data.answers = ["Not at all", "A little", "Super useful!", "What's testing?"]
+      render(
+        <Multiple
+          data={data}
+        />
+      );
+      expect(data.addToScore).toHaveBeenCalledTimes(0);
+      expect(data.increaseArrayIndex).toHaveBeenCalledTimes(0);
+      userEvent.click(screen.getByText("What's testing?"));
+      expect(data.addToScore).toHaveBeenCalledTimes(0);
+      expect(data.increaseArrayIndex).toHaveBeenCalledTimes(1);
+    });
+
+    test("clicking the correct answer does increase the score", ()=>{
+      data.answers = ["Not at all", "A little", "Super useful!", "What's testing?"]
+      render(
+        <Multiple
+          data={data}
+        />
+      );
+      expect(data.addToScore).toHaveBeenCalledTimes(0);
+      expect(data.increaseArrayIndex).toHaveBeenCalledTimes(0);
+      userEvent.click(screen.getByText("Super useful!"));
+      expect(data.addToScore).toHaveBeenCalledTimes(1);
+      expect(data.increaseArrayIndex).toHaveBeenCalledTimes(1);
+    });
+
+  });
