@@ -34,7 +34,7 @@ export default class Multiple extends Component {
       return "65%"
       // default to small
     } else return "50%"
-  }
+  ;}
 
   render() {
 
@@ -61,6 +61,7 @@ export default class Multiple extends Component {
 
       <div 
         className="multiple-body"
+        data-testid="multiple-body"
         style={{
           width: this.setComponentWidth(answer1, answer2, answer3, answer4)
         }}
