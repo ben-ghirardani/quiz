@@ -6,35 +6,10 @@ const questionArray = [
     question: "What is a test?",
     correct_answer: "A test",
     incorrect_answers: ["Not a test", "A tree", "A coat"]
-  },
-  {
-    type: "multiple",
-    question: "When is a test?",
-    correct_answer: "Now",
-    incorrect_answers: ["Later", "Next week", "Never"]
-  },
-  {
-    type: "multiple",
-    question: "Where is a test?",
-    correct_answer: "Here",
-    incorrect_answers: ["There", "Over there", "Lost it"]
-  },
-  {
-    type: "boolean",
-    question: "True is true?",
-    correct_answer: "True",
-    incorrect_answers: ["False"]
-  },
-  {
-    type: "boolean",
-    question: "True is false?",
-    correct_answer: "False",
-    incorrect_answers: ["True"]
-  },
-  {
-    type: "boolean",
-    question: "Testing is great?",
-    correct_answer: "True",
-    incorrect_answers: ["False"]
   }
 ]
+
+test("functions creates a new array containing correct and incorrect answers", ()=>{
+  let sortedArray = sortQuestions(questionArray);
+  expect(sortedArray[0].answers.length).toBe(4);
+});

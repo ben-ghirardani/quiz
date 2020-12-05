@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-
 import Category from './components/category/Category';
 import Difficulty from './components/difficulty/Difficulty';
 import Length from './components/length/Length';
@@ -123,7 +122,7 @@ class App extends Component {
       } else disabled = false
 
     } else disabled = true;
-    
+
     return disabled;
   }; 
 
