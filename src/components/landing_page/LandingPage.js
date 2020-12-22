@@ -11,8 +11,8 @@ export default function landingPage(props) {
     transition={{
       delay: 1,
       type: "spring",
-      stiffness: 260,
-      damping: 20
+      stiffness: 100,
+      damping: 9
     }}
   >
   Quiz!

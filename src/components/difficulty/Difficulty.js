@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../header/Header.js';
 import './Difficulty.css';
+import {motion} from 'framer-motion';
 
 export default function Difficulty (props) {
 
@@ -18,7 +19,14 @@ export default function Difficulty (props) {
 
     <div className="difficulty-body">
      
-      <div className="difficulty-item">
+      <motion.div 
+        className="difficulty-item"
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        transition={{
+          delay: 0.2
+        }}
+      >
         <p 
           onClick={() => easy === false ? props.setDifficultyAndDisplay("easy", "Length") : null }
           style={{
@@ -27,9 +35,16 @@ export default function Difficulty (props) {
         >
           Easy
         </p>
-      </div>
+      </motion.div>
 
-      <div className="difficulty-item">
+      <motion.div 
+        className="difficulty-item"
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        transition={{
+          delay: 0.4
+        }}
+      >
         <p 
           onClick={() => medium === false ? props.setDifficultyAndDisplay("medium", "Length") : null }
           style={{
@@ -38,9 +53,16 @@ export default function Difficulty (props) {
         >
           Medium
         </p>
-      </div>
+      </motion.div>
 
-      <div className="difficulty-item">
+      <motion.div 
+        className="difficulty-item"
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        transition={{
+          delay: 0.6
+        }}
+      >
         <p 
           onClick={() => hard === false ? props.setDifficultyAndDisplay("hard", "Length") : null }
           style={{
@@ -49,9 +71,16 @@ export default function Difficulty (props) {
         >
           Hard
         </p>
-      </div>
+      </motion.div>
       
-      <div className="difficulty-item">
+      <motion.div 
+        className="difficulty-item"
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        transition={{
+          delay: 0.8
+        }}
+      >
         <p 
           onClick={() => random === false ? props.setDifficultyAndDisplay("random", "Length") : null }
           style={{
@@ -60,7 +89,7 @@ export default function Difficulty (props) {
         >
           Random
         </p>
-      </div>
+      </motion.div>
      
     </div>
   

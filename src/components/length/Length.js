@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../header/Header.js';
 import './Length.css';
+import {motion} from 'framer-motion';
 
 export default function length (props) {
 
@@ -17,7 +18,14 @@ export default function length (props) {
     <div className="length-body">
       
       {/* 10 questions */}
-      <div className="length-item">
+      <motion.div 
+        className="length-item"
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        transition={{
+          delay: 0.2
+        }}
+      >
         <p
           // replace null option in ternery with error handling
           onClick={() => short === false ? props.setLengthAndDisplay(10, "Quiz") : null } 
@@ -27,10 +35,17 @@ export default function length (props) {
         >
           Short
         </p>
-      </div>
+      </motion.div>
       
       {/* 20 questions */}
-      <div className="length-item">
+      <motion.div 
+        className="length-item"
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        transition={{
+          delay: 0.4
+        }}
+      >
         <p
           onClick={() => medium === false ? props.setLengthAndDisplay(20, "Quiz") : null }
           style={{
@@ -39,10 +54,17 @@ export default function length (props) {
         >
           Medium
         </p>
-      </div>
+      </motion.div>
 
       {/* 30 questions */}
-      <div className="length-item">
+      <motion.div 
+        className="length-item"
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        transition={{
+          delay: 0.6
+        }}
+      >
         <p
           onClick={() => long === false ? props.setLengthAndDisplay(30, "Quiz") : null }
           style={{
@@ -51,7 +73,7 @@ export default function length (props) {
         >
           Long
         </p>
-      </div>
+      </motion.div>
 
     </div>
  

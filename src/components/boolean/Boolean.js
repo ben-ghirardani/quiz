@@ -4,6 +4,7 @@ import parseText from '../parse_text/parseText.js';
 import checkStringLength from '../check_string_length/CheckStringLength';
 import Header from '../header/Header.js';
 import setFontSize from '../set_font_size/SetFontSize.js'
+import {motion} from 'framer-motion';
 
 export default class Boolean extends Component {
   
@@ -43,17 +44,31 @@ export default class Boolean extends Component {
 
         <div className="boolean-body">
 
-          <div className="boolean-item">
+          <motion.div 
+            className="boolean-item"
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            transition={{
+              delay: 0.2
+            }}
+          >
             <p onClick={ ()=> this.buttonClick("True")}>
               True
             </p>        
-          </div>
+          </motion.div>
 
-          <div className="boolean-item">
+          <motion.div 
+            className="boolean-item"
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            transition={{
+              delay: 0.4
+            }}
+          >
             <p onClick={ ()=> this.buttonClick("False")} >
               False
             </p>        
-          </div>
+          </motion.div>
 
         </div>
       </div>
