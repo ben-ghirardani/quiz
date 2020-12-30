@@ -8,6 +8,7 @@
     height: 100%;
     position: absolute;
     font-size: 30vh;
+    animation: text 4s ease-in infinite;
   }
 
 }
@@ -22,5 +23,13 @@
     height: 100%;
     position: absolute;
     font-size: 18vh;
+    animation: text 4s ease-in infinite;
   }
+}
+
+/* creates pulsating effect, from nothing to effect at 50% duration back to nothing */
+@keyframes text {
+  0%   {text-shadow: 0px 0px 0px #fff}
+  50%  {text-shadow: 0px 0px 15px #fff}
+  100% {text-shadow: 0px 0px 0px #fff}
 }

@@ -4,7 +4,6 @@ import parseText from '../parse_text/parseText';
 import checkStringLength from '../check_string_length/CheckStringLength'
 import setFontSize from '../set_font_size/SetFontSize.js'
 import Header from '../header/Header.js';
-import {motion} from 'framer-motion';
 
 export default class Multiple extends Component {
 
@@ -70,57 +69,29 @@ export default class Multiple extends Component {
         
         {/* is the containing div "multiple-item" redundant now that Button is removed? */}
 
-        <motion.div 
-          className="multiple-item"
-          initial={{opacity: 0}}
-          animate={{opacity: 1}}
-          transition={{
-            delay: 0.2
-          }}
-        >
+        <div className="multiple-item">
           <p
             onClick={ ()=> this.buttonClick(answer1)}
           >{answer1}</p> 
-        </motion.div>
+        </div>
 
-        <motion.div 
-          className="multiple-item"
-          initial={{opacity: 0}}
-          animate={{opacity: 1}}
-          transition={{
-            delay: 0.4
-          }}
-        >
+        <div className="multiple-item">
           <p
             onClick={ ()=> this.buttonClick(answer2)}
           >{answer2}</p>
-        </motion.div>
+        </div>
 
-        <motion.div 
-          className="multiple-item"
-          initial={{opacity: 0}}
-          animate={{opacity: 1}}
-          transition={{
-            delay: 0.6
-          }}
-        >
+        <div className="multiple-item">
           <p
             onClick={ ()=> this.buttonClick(answer3)}
           >{answer3}</p>
-        </motion.div>
+        </div>
 
-        <motion.div 
-          className="multiple-item"
-          initial={{opacity: 0}}
-          animate={{opacity: 1}}
-          transition={{
-            delay: 0.8
-          }}
-        >
+        <div className="multiple-item">
           <p
             onClick={ ()=> this.buttonClick(answer4)}
           >{answer4}</p>
-        </motion.div>
+        </div>
          
       </div>
     </div>
