@@ -7,7 +7,6 @@ export default function sortQuestions(array) {
   let number = 1;
 
   array.forEach(item => {
-    // default question format
     let question = {
     type: item.type,
     questionNumber: number,

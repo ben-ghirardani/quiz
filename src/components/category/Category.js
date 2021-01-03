@@ -17,7 +17,6 @@ export default class Category extends Component {
     this.props.changeDisplay("Difficulty");
   };
 
-  // make the animation smoother, take a fraction longer
   createCategories(array) {
     const itemList = array.map((category)=> 
       <motion.div

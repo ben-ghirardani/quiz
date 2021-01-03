@@ -11,15 +11,12 @@ export default class GenerateQuestions extends Component {
     this.showQuestion = this.showQuestion.bind(this);
   }
 
-  // is it too fussy to create an object and pass it to the question component, rather than it's contents directly as props?
-
   showQuestion(array, index) {
     let question = array[index];
     let result;
     let data = {
       type: question.type,
       questionNumber: question.questionNumber,
-      // must be a better way to write the line below!
       question: question.question,
       answers: question.answers,
       correctAnswer: question.correctAnswer,
@@ -29,8 +26,6 @@ export default class GenerateQuestions extends Component {
     question.type === "multiple" ? result = <Multiple data={data} /> : result = <Boolean data={data} />
     return result;
   }
-
-  // ternery statement - once arrayIndex reaches array length, show results instead
 
   render() {
     let index = this.props.arrayIndex;

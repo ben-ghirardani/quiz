@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Boolean.css';
 import parseText from '../parse_text/parseText.js';
-import checkStringLength from '../check_string_length/CheckStringLength';
 import Header from '../header/Header.js';
 import setFontSize from '../set_font_size/SetFontSize.js'
 
@@ -12,10 +11,13 @@ export default class Boolean extends Component {
     this.buttonClick = this.buttonClick.bind(this);
   }
 
-  buttonClick(answer) {
+  async buttonClick(answer) {
     let correctAnswer = this.props.data.correctAnswer;
     if (answer === correctAnswer) {
-      this.props.data.addToScore();
+
+      // ensure score is updated before app progresses
+      await this.props.data.addToScore();
+
       this.props.data.increaseArrayIndex();
     } else if (answer !== correctAnswer) {
       this.props.data.increaseArrayIndex();
@@ -30,16 +32,15 @@ export default class Boolean extends Component {
     return(
       <div className="boolean">
 
-      <Header
-        number={questionNumber}
-        text={questionText}
-        // style takes precedence over css sheet
-        // adapts as question length is unknown
-        style={{
-          fontSize: setFontSize(checkStringLength(questionText)),
-          lineHeight: "4.5vh"
-        }}
-      /> 
+        <Header
+          number={questionNumber}
+          text={questionText}
+          // style takes precedence over css sheet
+          style={{
+            fontSize: setFontSize(questionText.length),
+            lineHeight: "4.5vh"
+          }}
+        /> 
 
         <div className="boolean-body">
 

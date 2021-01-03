@@ -42,7 +42,6 @@ class App extends Component {
     this.getCategories()
   };
 
-  // function clickLandingPage prevents progress before data is ready, add an animtion to hide the fact
   getCategories() {
     fetch('https://opentdb.com/api_category.php')
       .then(response => response.json())
@@ -50,7 +49,6 @@ class App extends Component {
       .catch(error => console.log(error.message));
   };
 
-  // get the category ID from the category name
   getCategoryID(categoryName) {
     let categories = this.state.categories;
     let categoryID;
@@ -65,7 +63,6 @@ class App extends Component {
     return categoryID;
   };
 
-  // use ID to get number of questions
   async getNumberOfQuestions(id) {
     let appendedID = id.toString();
     let response = await fetch(`https://opentdb.com/api_count.php?category=${appendedID}`);
@@ -73,7 +70,6 @@ class App extends Component {
     this.setState({numQuestions: data})
   }
 
-  // combine setDifficulty and changeDisplay for difficulty buttons
   setDifficultyAndDisplay(difficulty, display) {
     this.setDifficulty(difficulty);
     this.changeDisplay(display);

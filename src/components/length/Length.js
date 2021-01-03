@@ -27,7 +27,6 @@ export default function length (props) {
         }}
       >
         <p
-          // replace null option in ternery with error handling
           onClick={() => short === false ? props.setLengthAndDisplay(10, "Quiz") : null } 
           style={{
             opacity: short === false ? 1 : 0.5

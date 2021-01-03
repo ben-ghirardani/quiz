@@ -26,7 +26,6 @@ export default class Quiz extends Component {
 
   createAPIURL(amount, category, difficulty) {
     let adjustedDifficulty;
-    // unpick code that feeds into this function to make it less fussy?
     if(difficulty === "random") {
       adjustedDifficulty = ""
     } else {

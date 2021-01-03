@@ -1,4 +1,4 @@
-// fisher yates shuffle is an established algorithm and so is not tested here 
+// fisher yates shuffle is an established algorithm and so is not tested
 
 export default function fisherYatesShuffle(array) {
   

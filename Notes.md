@@ -6,7 +6,4 @@ From App.js
 Bugs to solve - 
 
 1) Tidy up code! Check indentation on every page, etc.
-2) Is score updating quickly enough? Include promise to make sure it's being captured before moving to next screen?
-3) folder naming convention - folders which are functions in camelCase? Folders which are classes CamelCase?
-
-super(props) deprecated?
+2) folder naming convention - folders which are functions in camelCase? Folders which are classes CamelCase?

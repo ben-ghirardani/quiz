@@ -15,6 +15,6 @@ export default function landingPage(props) {
       damping: 9
     }}
   >
-  Quiz!
+    Quiz!
   </motion.div>
 }
