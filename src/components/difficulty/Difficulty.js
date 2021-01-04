@@ -5,7 +5,7 @@ import {motion} from 'framer-motion';
 
 export default function Difficulty (props) {
 
-  // boolean: should component be disabled due to lack of questions to populate quiz? 
+  // determine whether component needs to be disabled due to lack of questions to populate quiz
   const easy = props.disableDifficulty("Easy");
   const medium = props.disableDifficulty("Medium");
   const hard = props.disableDifficulty("Hard");

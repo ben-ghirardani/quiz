@@ -1,7 +1,5 @@
 /* large screen */
 
-/* screen size is actually 930? */
-
 @media screen and (min-width: 930px) {
   .category-body {
     width: 75%;

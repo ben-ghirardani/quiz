@@ -47,11 +47,9 @@ export default class Category extends Component {
         <Header
           text={"Choose Category"}
         />
-        {/* does this need to be a motion div anymore? */}
         <motion.div 
           className="category-body"
         >
-          {/* {itemList} */}
           {this.createCategories(this.props.categories)}
         </motion.div>
       </div>
