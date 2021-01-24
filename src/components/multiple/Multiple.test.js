@@ -59,6 +59,7 @@ describe("setComponentWidth dynamically alters the width of the component based 
 
 });
 
+  // is it correct to make every expect await as it relates to an async/await function?
   describe("onClick sorts between correct and incorrect answers", ()=>{
 
     test("clicking the wrong answer does not increase the score", ()=>{
@@ -75,8 +76,11 @@ describe("setComponentWidth dynamically alters the width of the component based 
       expect(data.increaseArrayIndex).toHaveBeenCalledTimes(1);
     });
 
-    test("clicking the correct answer does increase the score", ()=>{
+    // async/await test to account for async/await property of function tested
+    test("clicking the correct answer does increase the score", async ()=>{
+
       data.answers = ["Not at all", "A little", "Super useful!", "What's testing?"]
+
       render(
         <Multiple
           data={data}
@@ -86,7 +90,7 @@ describe("setComponentWidth dynamically alters the width of the component based 
       expect(data.increaseArrayIndex).toHaveBeenCalledTimes(0);
       userEvent.click(screen.getByText("Super useful!"));
       expect(data.addToScore).toHaveBeenCalledTimes(1);
-      expect(data.increaseArrayIndex).toHaveBeenCalledTimes(1);
+      expect(await data.increaseArrayIndex).toHaveBeenCalledTimes(1);
     });
 
   });

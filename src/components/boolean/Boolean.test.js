@@ -46,7 +46,8 @@ test("clicking the wrong answer does not increase the score", ()=> {
   expect(data.increaseArrayIndex).toHaveBeenCalledTimes(1);
 });
 
-test("clicking the correct answer increases the score", ()=> {
+// async/await test to account for async/await property of function tested
+test("clicking the correct answer increases the score", async ()=> {
 
   render(
     <Boolean
@@ -56,5 +57,5 @@ test("clicking the correct answer increases the score", ()=> {
 
   userEvent.click(screen.getByText("True"));
   expect(data.addToScore).toHaveBeenCalledTimes(1);
-  expect(data.increaseArrayIndex).toHaveBeenCalledTimes(1);
+  expect(await data.increaseArrayIndex).toHaveBeenCalledTimes(1);
 });

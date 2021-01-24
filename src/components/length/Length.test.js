@@ -10,16 +10,20 @@ afterEach(()=>{
 const disableLength = jest.fn();
 const setLengthAndDisplay = jest.fn();
 
-test("page renders with all elements", ()=>{
+test("page renders with all elements", async ()=>{
+
+  disableLength.mockReturnValue(false);
+  setLengthAndDisplay.mockReturnValue(30, "Quiz");
+
   const {getByText} = render(
     <Length
       disableLength={disableLength}
       setLengthAndDisplay={setLengthAndDisplay}
     />
   );
-  expect(getByText("Short")).toBeVisible();
-  expect(getByText("Medium")).toBeVisible();
-  expect(getByText("Long")).toBeVisible();
+  expect(getByText("Short")).toBeInTheDocument();
+  expect(getByText("Medium")).toBeInTheDocument();
+  expect(getByText("Long")).toBeInTheDocument();
 });
 
 test("enough questions to populate a short quiz, onClick functionality works", ()=>{

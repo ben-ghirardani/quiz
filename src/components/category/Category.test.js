@@ -33,10 +33,10 @@ test("the page renders correctly", ()=> {
     />
   )
 
-  expect(getByText("Choose Category")).toBeVisible();
-  expect(getByText("General Knowledge")).toBeVisible();
-  expect(getByText("Testing")).toBeVisible();
-  expect(getByText("Sport")).toBeVisible();
+  expect(getByText("Choose Category")).toBeInTheDocument();
+  expect(getByText("General Knowledge")).toBeInTheDocument();
+  expect(getByText("Testing")).toBeInTheDocument();
+  expect(getByText("Sport")).toBeInTheDocument();
 });
 
 test("clicking a category activates onClick functionality", ()=> {

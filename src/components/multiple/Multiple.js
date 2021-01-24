@@ -16,7 +16,6 @@ export default class Multiple extends Component {
     let correctAnswer = this.props.data.correctAnswer;
     if (answer === correctAnswer) {
 
-      // ensure score is updated before app progresses
       await this.props.data.addToScore();
 
       this.props.data.increaseArrayIndex();

@@ -21,11 +21,11 @@ test("page renders with all components", ()=> {
     />
   );
 
-  expect(getByText("Choose difficulty")).toBeVisible();
-  expect(getByText("Easy")).toBeVisible();
-  expect(getByText("Medium")).toBeVisible();
-  expect(getByText("Hard")).toBeVisible();
-  expect(getByText("Random")).toBeVisible();
+  expect(getByText("Choose difficulty")).toBeInTheDocument();
+  expect(getByText("Easy")).toBeInTheDocument();
+  expect(getByText("Medium")).toBeInTheDocument();
+  expect(getByText("Hard")).toBeInTheDocument();
+  expect(getByText("Random")).toBeInTheDocument();
 })
 
 describe("there are not enough questions of each type to populate a quiz", ()=> {  
